@@ -1,0 +1,3 @@
+## 2025-05-15 - [Accordion Accessibility Pattern]
+**Learning:** In static-heavy landing pages (like `public/site.html`), interactive components often use simple `onclick` handlers on `div` elements, making them inaccessible to keyboard and screen reader users. Simply adding `role="button"` and `tabindex="0"` is not enough; one must also manage `aria-expanded` and add a global listener for 'Enter'/'Space' keys.
+**Action:** When encountering `onclick` patterns on non-interactive elements, implement the full accessibility suite: semantic role, tab focus, ARIA state management, and keyboard event parity.
