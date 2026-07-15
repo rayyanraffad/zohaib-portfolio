@@ -1,0 +1,3 @@
+## 2025-05-15 - Accessible Mobile Navigation and Interactive Custom Elements
+**Learning:** In projects with static HTML injected into React routes, accessibility basics like `visibility: hidden` for closed menus and keyboard listeners for `div`-based buttons are often missing. Toggling `aria-expanded` and `aria-hidden` synchronously with CSS state changes is critical for screen reader users.
+**Action:** Always check if mobile drawers are reachable via keyboard when closed and if custom interactive `div`s have `role="button"` and `tabindex="0"`. Apply `:focus-visible` styles that mirror `:hover` to ensure keyboard users have equal visual feedback.
