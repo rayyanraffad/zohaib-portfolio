@@ -1,0 +1,3 @@
+## 2025-05-18 - Nested Interactive Elements & Mobile Drawers
+**Learning:** In interactive custom elements like a clickable grid row containing nested buttons/links, screen readers struggle with nested interactive controls. In addition, mobile navigation drawers hidden off-screen via CSS transforms remain in the page's tab order unless explicitly hidden using `visibility: hidden` or `display: none`.
+**Action:** When creating clickable container elements, set appropriate role, tabindex, and aria properties, and replace nested interactive buttons/links with non-interactive elements (e.g. `<span>`) styled to match. Ensure hidden navigation drawers use `visibility: hidden` when closed and `visibility: visible` when open alongside transitions.
