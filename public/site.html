@@ -244,14 +244,10 @@
         justify-content: center;
         gap: 2rem;
         transform: translateX(100%);
-        visibility: hidden;
-        transition:
-          transform 0.45s var(--ease),
-          visibility 0.45s var(--ease);
+        transition: transform 0.45s var(--ease);
       }
       .nav-drawer.open {
         transform: none;
-        visibility: visible;
       }
       .nav-drawer a {
         font-family: "Bebas Neue", sans-serif;
@@ -1076,14 +1072,6 @@
         padding-left: 1rem;
       }
       .case-row:hover::before {
-        transform: scaleY(1);
-      }
-      .case-row:focus-visible {
-        outline: 2px solid var(--gold);
-        outline-offset: 4px;
-        padding-left: 1rem;
-      }
-      .case-row:focus-visible::before {
         transform: scaleY(1);
       }
       .case-n {
@@ -2063,20 +2051,7 @@
         </p>
       </div>
 
-      <div
-        class="case-row reveal"
-        onclick="toggleCase(this)"
-        onkeydown="
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggleCase(this);
-          }
-        "
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Medical Clinic, Lahore Case Study"
-      >
+      <div class="case-row reveal" onclick="toggleCase(this)">
         <div class="case-n">01</div>
         <div>
           <div class="case-client">Medical Clinic, Lahore</div>
@@ -2090,7 +2065,7 @@
           <div class="case-result-num">+312%</div>
           <div class="case-result-lbl">Profile Views</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2118,20 +2093,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d1"
-        onclick="toggleCase(this)"
-        onkeydown="
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggleCase(this);
-          }
-        "
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Restaurant Chain Case Study"
-      >
+      <div class="case-row reveal d1" onclick="toggleCase(this)">
         <div class="case-n">02</div>
         <div>
           <div class="case-client">Restaurant Chain</div>
@@ -2145,7 +2107,7 @@
           <div class="case-result-num">#1</div>
           <div class="case-result-lbl">Google Maps Rank</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2173,20 +2135,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d2"
-        onclick="toggleCase(this)"
-        onkeydown="
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggleCase(this);
-          }
-        "
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Plumbing Services Case Study"
-      >
+      <div class="case-row reveal d2" onclick="toggleCase(this)">
         <div class="case-n">03</div>
         <div>
           <div class="case-client">Plumbing Services</div>
@@ -2200,7 +2149,7 @@
           <div class="case-result-num">+420%</div>
           <div class="case-result-lbl">Organic Leads</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2228,20 +2177,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d1"
-        onclick="toggleCase(this)"
-        onkeydown="
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggleCase(this);
-          }
-        "
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Real Estate Agency Case Study"
-      >
+      <div class="case-row reveal d1" onclick="toggleCase(this)">
         <div class="case-n">04</div>
         <div>
           <div class="case-client">Real Estate Agency</div>
@@ -2255,7 +2191,7 @@
           <div class="case-result-num">+290%</div>
           <div class="case-result-lbl">Enquiries</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2283,20 +2219,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d2"
-        onclick="toggleCase(this)"
-        onkeydown="
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggleCase(this);
-          }
-        "
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Dental Practice Case Study"
-      >
+      <div class="case-row reveal d2" onclick="toggleCase(this)">
         <div class="case-n">05</div>
         <div>
           <div class="case-client">Dental Practice</div>
@@ -2310,7 +2233,7 @@
           <div class="case-result-num">3-Pack</div>
           <div class="case-result-lbl">Google Maps</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2338,20 +2261,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d3"
-        onclick="toggleCase(this)"
-        onkeydown="
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggleCase(this);
-          }
-        "
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Law Firm Case Study"
-      >
+      <div class="case-row reveal d3" onclick="toggleCase(this)">
         <div class="case-n">06</div>
         <div>
           <div class="case-client">Law Firm</div>
@@ -2365,7 +2275,7 @@
           <div class="case-result-num">+550%</div>
           <div class="case-result-lbl">Organic Traffic</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2680,19 +2590,12 @@
         const isOpen = d.classList.contains("open");
         document.querySelectorAll(".case-details.open").forEach((x) => {
           x.classList.remove("open");
-          const row = x.closest(".case-row");
-          if (row) {
-            row.setAttribute("aria-expanded", "false");
-            const btn = row.querySelector(".case-btn");
-            if (btn) btn.textContent = "+";
-          }
+          const btn = x.closest(".case-row").querySelector(".case-btn");
+          if (btn) btn.textContent = "+";
         });
         if (!isOpen) {
           d.classList.add("open");
-          item.setAttribute("aria-expanded", "true");
           if (b) b.textContent = "−";
-        } else {
-          item.setAttribute("aria-expanded", "false");
         }
       }
 
