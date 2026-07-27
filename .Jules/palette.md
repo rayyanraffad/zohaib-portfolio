@@ -1,0 +1,4 @@
+## 2025-02-27 - [A11y Off-screen Link Focus and Nested Interactive Controls]
+
+**Learning:** Off-screen navigation menus/drawers must transition `visibility` (not just `transform` or `opacity`) to completely remove off-screen links from the document tab order. Additionally, clickable card or row containers that trigger accordion reveals must not contain nested interactive controls like `<button>` tags; converting them to decorative elements prevents keyboard nesting and focus hierarchy conflicts while standardizing the wrapper container's keyboard handlers (Enter/Space) and focus styles (`:focus-visible`).
+**Action:** Always combine `visibility: hidden` (when closed) and `visibility: visible` (when open) on off-screen drawers, and convert nested interactive elements into `<span aria-hidden="true">` inside `role="button"` parent containers.
