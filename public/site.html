@@ -244,14 +244,10 @@
         justify-content: center;
         gap: 2rem;
         transform: translateX(100%);
-        visibility: hidden;
-        transition:
-          transform 0.45s var(--ease),
-          visibility 0.45s var(--ease);
+        transition: transform 0.45s var(--ease);
       }
       .nav-drawer.open {
         transform: none;
-        visibility: visible;
       }
       .nav-drawer a {
         font-family: "Bebas Neue", sans-serif;
@@ -1072,18 +1068,11 @@
         transform: scaleY(0);
         transition: transform 0.4s var(--ease);
       }
-      .case-row:hover,
-      .case-row:focus-visible {
+      .case-row:hover {
         padding-left: 1rem;
-        outline: none;
       }
-      .case-row:hover::before,
-      .case-row:focus-visible::before {
+      .case-row:hover::before {
         transform: scaleY(1);
-      }
-      .case-row:focus-visible {
-        background: var(--gold-dim);
-        box-shadow: inset 0 0 0 1px var(--gold);
       }
       .case-n {
         font-family: "Bebas Neue", sans-serif;
@@ -1140,6 +1129,7 @@
         border-radius: 50%;
         border: 1px solid var(--border);
         background: none;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1153,8 +1143,8 @@
         flex-shrink: 0;
         -webkit-tap-highlight-color: transparent;
       }
-      .case-row:hover .case-btn,
-      .case-row:focus-visible .case-btn {
+      .case-btn:hover,
+      .case-btn:active {
         background: var(--gold);
         border-color: var(--gold);
         color: #080c14;
@@ -1799,7 +1789,7 @@
           >
         </li>
       </ul>
-      <button class="ham" id="ham" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+      <button class="ham" id="ham" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -2061,14 +2051,7 @@
         </p>
       </div>
 
-      <div
-        class="case-row reveal"
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Medical Clinic, Lahore Case Study: +312% Profile Views. Click to expand details."
-        onclick="toggleCase(this)"
-      >
+      <div class="case-row reveal" onclick="toggleCase(this)">
         <div class="case-n">01</div>
         <div>
           <div class="case-client">Medical Clinic, Lahore</div>
@@ -2082,7 +2065,7 @@
           <div class="case-result-num">+312%</div>
           <div class="case-result-lbl">Profile Views</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2110,14 +2093,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d1"
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Restaurant Chain Case Study: #1 Google Maps Rank. Click to expand details."
-        onclick="toggleCase(this)"
-      >
+      <div class="case-row reveal d1" onclick="toggleCase(this)">
         <div class="case-n">02</div>
         <div>
           <div class="case-client">Restaurant Chain</div>
@@ -2131,7 +2107,7 @@
           <div class="case-result-num">#1</div>
           <div class="case-result-lbl">Google Maps Rank</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2159,14 +2135,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d2"
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Plumbing Services Case Study: +420% Organic Leads. Click to expand details."
-        onclick="toggleCase(this)"
-      >
+      <div class="case-row reveal d2" onclick="toggleCase(this)">
         <div class="case-n">03</div>
         <div>
           <div class="case-client">Plumbing Services</div>
@@ -2180,7 +2149,7 @@
           <div class="case-result-num">+420%</div>
           <div class="case-result-lbl">Organic Leads</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2208,14 +2177,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d1"
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Real Estate Agency Case Study: +290% Enquiries. Click to expand details."
-        onclick="toggleCase(this)"
-      >
+      <div class="case-row reveal d1" onclick="toggleCase(this)">
         <div class="case-n">04</div>
         <div>
           <div class="case-client">Real Estate Agency</div>
@@ -2229,7 +2191,7 @@
           <div class="case-result-num">+290%</div>
           <div class="case-result-lbl">Enquiries</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2257,14 +2219,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d2"
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Dental Practice Case Study: Entered Maps 3-Pack. Click to expand details."
-        onclick="toggleCase(this)"
-      >
+      <div class="case-row reveal d2" onclick="toggleCase(this)">
         <div class="case-n">05</div>
         <div>
           <div class="case-client">Dental Practice</div>
@@ -2278,7 +2233,7 @@
           <div class="case-result-num">3-Pack</div>
           <div class="case-result-lbl">Google Maps</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2306,14 +2261,7 @@
         </div>
       </div>
 
-      <div
-        class="case-row reveal d3"
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-        aria-label="Law Firm Case Study: +550% Organic Traffic. Click to expand details."
-        onclick="toggleCase(this)"
-      >
+      <div class="case-row reveal d3" onclick="toggleCase(this)">
         <div class="case-n">06</div>
         <div>
           <div class="case-client">Law Firm</div>
@@ -2327,7 +2275,7 @@
           <div class="case-result-num">+550%</div>
           <div class="case-result-lbl">Organic Traffic</div>
         </div>
-        <span class="case-btn" aria-hidden="true">+</span>
+        <button class="case-btn">+</button>
         <div class="case-details">
           <div class="case-dg">
             <div class="db">
@@ -2588,13 +2536,11 @@
       ham.addEventListener("click", () => {
         const open = ham.classList.toggle("open");
         drawer.classList.toggle("open", open);
-        ham.setAttribute("aria-expanded", open);
         document.body.style.overflow = open ? "hidden" : "";
       });
       function closeDrawer() {
         ham.classList.remove("open");
         drawer.classList.remove("open");
-        ham.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
       }
       /* Close drawer on outside tap */
@@ -2644,29 +2590,14 @@
         const isOpen = d.classList.contains("open");
         document.querySelectorAll(".case-details.open").forEach((x) => {
           x.classList.remove("open");
-          const r = x.closest(".case-row");
-          r.setAttribute("aria-expanded", "false");
-          const btn = r.querySelector(".case-btn");
+          const btn = x.closest(".case-row").querySelector(".case-btn");
           if (btn) btn.textContent = "+";
         });
         if (!isOpen) {
           d.classList.add("open");
-          item.setAttribute("aria-expanded", "true");
           if (b) b.textContent = "−";
-        } else {
-          item.setAttribute("aria-expanded", "false");
         }
       }
-
-      /* Keyboard navigation for Case Studies */
-      document.querySelectorAll(".case-row").forEach((row) => {
-        row.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            toggleCase(row);
-          }
-        });
-      });
 
       /* PARALLAX — desktop only, passive listener */
       if (window.matchMedia("(min-width:769px)").matches) {
