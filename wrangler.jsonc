@@ -4,8 +4,18 @@
   "compatibility_date": "2026-06-20",
   "compatibility_flags": ["nodejs_compat"],
   "observability": { "enabled": true },
-  "main": "dist/server/server.js",
+  "main": "dist/server/index.mjs",
   "assets": {
     "directory": "dist/client"
-  }
+  },
+  "no_bundle": true,
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": [
+        "**/*.mjs",
+        "**/*.js"
+      ]
+    }
+  ]
 }
