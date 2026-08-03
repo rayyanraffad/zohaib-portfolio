@@ -1,775 +1,2700 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Syed Zohaib Ali — Local SEO Expert Lahore</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#080c14;--bg2:#0d1220;--bg3:#111827;
-  --surface:#161e2e;--surface2:#1c2638;
-  --gold:#c9963a;--gold-light:#e8b55a;--gold-pale:#f5d98a;
-  --gold-dim:rgba(201,150,58,.15);
-  --text:#e8e4d9;--text-muted:#7a8090;--text-dim:#4a5060;
-  --border:rgba(201,150,58,.12);--border2:rgba(255,255,255,.06);
-  --ease:cubic-bezier(.16,1,.3,1);
-  --nav-h:70px;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
-@media(pointer:fine){body{cursor:none}}
-img{max-width:100%;display:block}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syed Zohaib Ali — Local SEO Expert Lahore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #080c14;
+        --bg2: #0d1220;
+        --bg3: #111827;
+        --surface: #161e2e;
+        --surface2: #1c2638;
+        --gold: #c9963a;
+        --gold-light: #e8b55a;
+        --gold-pale: #f5d98a;
+        --gold-dim: rgba(201, 150, 58, 0.15);
+        --text: #e8e4d9;
+        --text-muted: #7a8090;
+        --text-dim: #4a5060;
+        --border: rgba(201, 150, 58, 0.12);
+        --border2: rgba(255, 255, 255, 0.06);
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --nav-h: 70px;
+      }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+      @media (pointer: fine) {
+        body {
+          cursor: none;
+        }
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
 
-/* ── CURSOR (desktop only) ── */
-#cur,#cur-ring{display:none}
-@media(pointer:fine){
-  #cur{display:block;position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s var(--ease),height .2s var(--ease);mix-blend-mode:screen}
-  #cur-ring{display:block;position:fixed;width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.5;transition:width .3s var(--ease),height .3s var(--ease)}
-}
+      /* ── CURSOR (desktop only) ── */
+      #cur,
+      #cur-ring {
+        display: none;
+      }
+      @media (pointer: fine) {
+        #cur {
+          display: block;
+          position: fixed;
+          width: 10px;
+          height: 10px;
+          background: var(--gold);
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 9999;
+          transform: translate(-50%, -50%);
+          transition:
+            width 0.2s var(--ease),
+            height 0.2s var(--ease);
+          mix-blend-mode: screen;
+        }
+        #cur-ring {
+          display: block;
+          position: fixed;
+          width: 36px;
+          height: 36px;
+          border: 1px solid var(--gold);
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 9998;
+          transform: translate(-50%, -50%);
+          opacity: 0.5;
+          transition:
+            width 0.3s var(--ease),
+            height 0.3s var(--ease);
+        }
+      }
 
-/* ── STARS ── */
-#stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.star{position:absolute;border-radius:50%;background:white;animation:twinkle var(--dur,3s) ease-in-out infinite var(--delay,0s)}
-@keyframes twinkle{0%,100%{opacity:var(--lo,.1)}50%{opacity:var(--hi,.6)}}
+      /* ── STARS ── */
+      #stars {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        border-radius: 50%;
+        background: white;
+        animation: twinkle var(--dur, 3s) ease-in-out infinite var(--delay, 0s);
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: var(--lo, 0.1);
+        }
+        50% {
+          opacity: var(--hi, 0.6);
+        }
+      }
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);padding:0 3.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(8,12,20,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:height .3s var(--ease),padding .3s var(--ease)}
-nav.scrolled{height:58px}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.06em;color:var(--text);text-decoration:none;z-index:201}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
-.nav-links a{font-size:.73rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;position:relative;transition:color .2s;white-space:nowrap}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:100%;height:1px;background:var(--gold);transition:right .3s var(--ease)}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{right:0}
-.nav-cta{background:var(--gold)!important;color:#080c14!important;padding:.4rem 1rem;border-radius:2px;font-weight:600!important;transition:background .2s!important}
-.nav-cta:hover{background:var(--gold-light)!important}
-.nav-cta::after{display:none!important}
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        height: var(--nav-h);
+        padding: 0 3.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(8, 12, 20, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        transition:
+          height 0.3s var(--ease),
+          padding 0.3s var(--ease);
+      }
+      nav.scrolled {
+        height: 58px;
+      }
+      .nav-logo {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.7rem;
+        letter-spacing: 0.06em;
+        color: var(--text);
+        text-decoration: none;
+        z-index: 201;
+      }
+      .nav-logo span {
+        color: var(--gold);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.2rem;
+        list-style: none;
+        align-items: center;
+      }
+      .nav-links a {
+        font-size: 0.73rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        text-decoration: none;
+        position: relative;
+        transition: color 0.2s;
+        white-space: nowrap;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 100%;
+        height: 1px;
+        background: var(--gold);
+        transition: right 0.3s var(--ease);
+      }
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+      .nav-links a:hover::after {
+        right: 0;
+      }
+      .nav-cta {
+        background: var(--gold) !important;
+        color: #080c14 !important;
+        padding: 0.4rem 1rem;
+        border-radius: 2px;
+        font-weight: 600 !important;
+        transition: background 0.2s !important;
+      }
+      .nav-cta:hover {
+        background: var(--gold-light) !important;
+      }
+      .nav-cta::after {
+        display: none !important;
+      }
 
-/* Hamburger */
-.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:201}
-.ham span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .3s,background .3s}
-.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.ham.open span:nth-child(2){opacity:0}
-.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+      /* Hamburger */
+      .ham {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        z-index: 201;
+      }
+      .ham span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition:
+          transform 0.3s var(--ease),
+          opacity 0.3s,
+          background 0.3s;
+      }
+      .ham.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .ham.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .ham.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
 
-/* Mobile nav drawer */
-.nav-drawer{position:fixed;inset:0;background:rgba(8,12,20,.97);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .45s var(--ease)}
-.nav-drawer.open{transform:none}
-.nav-drawer a{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.06em;color:var(--text-muted);text-decoration:none;transition:color .2s}
-.nav-drawer a:hover,.nav-drawer a:active{color:var(--gold)}
-.nav-drawer .drawer-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#080c14;padding:.7rem 2rem;font-size:1rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:.06em;margin-top:.5rem}
+      /* Mobile nav drawer */
+      .nav-drawer {
+        position: fixed;
+        inset: 0;
+        background: rgba(8, 12, 20, 0.97);
+        z-index: 199;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.45s var(--ease);
+      }
+      .nav-drawer.open {
+        transform: none;
+      }
+      .nav-drawer a {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.2rem;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-drawer a:hover,
+      .nav-drawer a:active {
+        color: var(--gold);
+      }
+      .nav-drawer .drawer-cta {
+        background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        color: #080c14;
+        padding: 0.7rem 2rem;
+        font-size: 1rem;
+        border-radius: 2px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        margin-top: 0.5rem;
+      }
 
-/* ── HERO ── */
-#hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;z-index:1;padding-top:var(--nav-h)}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,150,58,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,150,58,.03) 1px,transparent 1px);background-size:80px 80px}
-.hero-bg-radial{position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 75% 50%,rgba(201,150,58,.06) 0%,transparent 70%)}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:3rem 3rem 3rem 6rem;position:relative;z-index:2}
-.hero-tag{display:inline-flex;align-items:center;gap:.6rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem;opacity:0;transform:translateY(20px);animation:fadeUp .8s var(--ease) .2s forwards}
-.hero-tag::before{content:'';display:inline-block;width:24px;height:1px;background:var(--gold)}
-.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,6vw,8rem);line-height:.88;letter-spacing:.01em;margin-bottom:1.5rem;opacity:0;transform:translateY(30px);animation:fadeUp .9s var(--ease) .35s forwards}
-.hero-h1 .l1{display:block;color:var(--text)}
-.hero-h1 .l2{display:block;background:linear-gradient(90deg,var(--gold),var(--gold-pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-h1 .l3{display:block;-webkit-text-stroke:1.5px rgba(232,181,90,.4);color:transparent}
-.hero-desc{font-size:1rem;font-weight:300;line-height:1.75;color:var(--text-muted);max-width:420px;margin-bottom:2rem;opacity:0;transform:translateY(20px);animation:fadeUp .8s var(--ease) .5s forwards}
-.hero-ctas{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeUp .8s var(--ease) .65s forwards}
-.btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#080c14;padding:.85rem 1.8rem;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s;white-space:nowrap;-webkit-tap-highlight-color:transparent;position:relative;z-index:5;pointer-events:auto}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,150,58,.35)}
-.btn-ghost{display:inline-flex;align-items:center;font-size:.8rem;font-weight:500;color:var(--text-muted);text-decoration:none;letter-spacing:.06em;border:1px solid var(--border2);padding:.8rem 1.4rem;transition:border-color .2s,color .2s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border2);opacity:0;animation:fadeUp .8s var(--ease) .8s forwards;flex-wrap:wrap}
-.stat-item{display:flex;flex-direction:column}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;line-height:1;background:linear-gradient(135deg,var(--gold),var(--gold-pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-top:.2rem}
-.hero-right{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:400px}
-.hero-right-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(201,150,58,.04) 0%,transparent 70%)}
-.hero-visual{position:relative;z-index:2;opacity:0;animation:fadeUp 1s var(--ease) .5s forwards}
-.orb-outer{width:min(320px,70vw);height:min(320px,70vw);border-radius:50%;border:1px solid rgba(201,150,58,.15);display:flex;align-items:center;justify-content:center;position:relative;animation:spin 40s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.orb-outer::before{content:'';position:absolute;inset:-20px;border-radius:50%;border:1px dashed rgba(201,150,58,.08);animation:spin 25s linear infinite reverse}
-.orb-outer::after{content:'';position:absolute;inset:-40px;border-radius:50%;border:1px solid rgba(201,150,58,.04)}
-.orb-middle{width:72%;height:72%;border-radius:50%;border:1px solid rgba(201,150,58,.2);display:flex;align-items:center;justify-content:center;animation:spin 40s linear infinite reverse}
-.orb-core{width:65%;height:65%;border-radius:50%;background:linear-gradient(135deg,#1a1408,#2a1f08);border:1px solid rgba(201,150,58,.4);display:flex;align-items:center;justify-content:center;animation:spin 40s linear infinite;box-shadow:0 0 40px rgba(201,150,58,.12),inset 0 0 24px rgba(201,150,58,.06)}
-.orb-initials{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,4rem);background:linear-gradient(135deg,var(--gold),var(--gold-pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.06em}
-.orb-dot{position:absolute;width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 8px var(--gold)}
-.orb-dot:nth-child(1){top:-3px;left:50%;transform:translateX(-50%)}
-.orb-dot:nth-child(2){bottom:-3px;left:50%;transform:translateX(-50%);background:var(--gold-pale)}
-.orb-dot:nth-child(3){left:-3px;top:50%;transform:translateY(-50%);width:4px;height:4px;opacity:.5}
-.orb-dot:nth-child(4){right:-3px;top:50%;transform:translateY(-50%);width:4px;height:4px;opacity:.5}
-.orbit-pill{position:absolute;background:rgba(13,18,32,.92);border:1px solid var(--border);padding:.4rem .8rem;border-radius:20px;font-size:.6rem;font-family:'Space Mono',monospace;letter-spacing:.05em;color:var(--text-muted);white-space:nowrap;animation:spin 40s linear infinite reverse}
-.pill-t{top:-12px}
-.pill-b{bottom:-12px;color:var(--gold)}
-.f-pills{position:absolute;display:flex;flex-direction:column;gap:.7rem}
-.f-pills.l{left:1rem}
-.f-pills.r{right:1rem}
-.f-pill{background:rgba(13,18,32,.75);border:1px solid var(--border2);padding:.4rem .8rem;border-radius:20px;font-size:.65rem;color:rgba(232,228,217,.45);white-space:nowrap;animation:floatY 5s ease-in-out infinite}
-.f-pill:nth-child(2){animation-delay:1.5s}
-.f-pill:nth-child(3){animation-delay:3s}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:fadeUp .8s var(--ease) 1.2s forwards;z-index:10}
-.scroll-hint span{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim)}
-.scroll-line{width:1px;height:36px;background:linear-gradient(var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite}
-@keyframes scrollPulse{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+      /* ── HERO ── */
+      #hero {
+        min-height: 100svh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        padding-top: var(--nav-h);
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .hero-bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 150, 58, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 150, 58, 0.03) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .hero-bg-radial {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 60% at 75% 50%,
+          rgba(201, 150, 58, 0.06) 0%,
+          transparent 70%
+        );
+      }
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem 3rem 3rem 6rem;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.6rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s var(--ease) 0.2s forwards;
+      }
+      .hero-tag::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .hero-h1 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(3.5rem, 6vw, 8rem);
+        line-height: 0.88;
+        letter-spacing: 0.01em;
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 0.9s var(--ease) 0.35s forwards;
+      }
+      .hero-h1 .l1 {
+        display: block;
+        color: var(--text);
+      }
+      .hero-h1 .l2 {
+        display: block;
+        background: linear-gradient(90deg, var(--gold), var(--gold-pale));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero-h1 .l3 {
+        display: block;
+        -webkit-text-stroke: 1.5px rgba(232, 181, 90, 0.4);
+        color: transparent;
+      }
+      .hero-desc {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.75;
+        color: var(--text-muted);
+        max-width: 420px;
+        margin-bottom: 2rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s var(--ease) 0.5s forwards;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        flex-wrap: wrap;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s var(--ease) 0.65s forwards;
+      }
+      .btn-gold {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        color: #080c14;
+        padding: 0.85rem 1.8rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition:
+          transform 0.2s var(--ease),
+          box-shadow 0.2s;
+        white-space: nowrap;
+        -webkit-tap-highlight-color: transparent;
+        position: relative;
+        z-index: 5;
+        pointer-events: auto;
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(201, 150, 58, 0.35);
+      }
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        border: 1px solid var(--border2);
+        padding: 0.8rem 1.4rem;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+        white-space: nowrap;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .hero-stats {
+        display: flex;
+        gap: 2.5rem;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border2);
+        opacity: 0;
+        animation: fadeUp 0.8s var(--ease) 0.8s forwards;
+        flex-wrap: wrap;
+      }
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+      }
+      .stat-num {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.6rem;
+        line-height: 1;
+        background: linear-gradient(135deg, var(--gold), var(--gold-pale));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin-top: 0.2rem;
+      }
+      .hero-right {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        min-height: 400px;
+      }
+      .hero-right-bg {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 80% at 50% 50%,
+          rgba(201, 150, 58, 0.04) 0%,
+          transparent 70%
+        );
+      }
+      .hero-visual {
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        animation: fadeUp 1s var(--ease) 0.5s forwards;
+      }
+      .orb-outer {
+        width: min(320px, 70vw);
+        height: min(320px, 70vw);
+        border-radius: 50%;
+        border: 1px solid rgba(201, 150, 58, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        animation: spin 40s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .orb-outer::before {
+        content: "";
+        position: absolute;
+        inset: -20px;
+        border-radius: 50%;
+        border: 1px dashed rgba(201, 150, 58, 0.08);
+        animation: spin 25s linear infinite reverse;
+      }
+      .orb-outer::after {
+        content: "";
+        position: absolute;
+        inset: -40px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 150, 58, 0.04);
+      }
+      .orb-middle {
+        width: 72%;
+        height: 72%;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 150, 58, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: spin 40s linear infinite reverse;
+      }
+      .orb-core {
+        width: 65%;
+        height: 65%;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1a1408, #2a1f08);
+        border: 1px solid rgba(201, 150, 58, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: spin 40s linear infinite;
+        box-shadow:
+          0 0 40px rgba(201, 150, 58, 0.12),
+          inset 0 0 24px rgba(201, 150, 58, 0.06);
+      }
+      .orb-initials {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(2rem, 6vw, 4rem);
+        background: linear-gradient(135deg, var(--gold), var(--gold-pale));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 0.06em;
+      }
+      .orb-dot {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: var(--gold);
+        border-radius: 50%;
+        box-shadow: 0 0 8px var(--gold);
+      }
+      .orb-dot:nth-child(1) {
+        top: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .orb-dot:nth-child(2) {
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--gold-pale);
+      }
+      .orb-dot:nth-child(3) {
+        left: -3px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        opacity: 0.5;
+      }
+      .orb-dot:nth-child(4) {
+        right: -3px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        opacity: 0.5;
+      }
+      .orbit-pill {
+        position: absolute;
+        background: rgba(13, 18, 32, 0.92);
+        border: 1px solid var(--border);
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.6rem;
+        font-family: "Space Mono", monospace;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        white-space: nowrap;
+        animation: spin 40s linear infinite reverse;
+      }
+      .pill-t {
+        top: -12px;
+      }
+      .pill-b {
+        bottom: -12px;
+        color: var(--gold);
+      }
+      .f-pills {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .f-pills.l {
+        left: 1rem;
+      }
+      .f-pills.r {
+        right: 1rem;
+      }
+      .f-pill {
+        background: rgba(13, 18, 32, 0.75);
+        border: 1px solid var(--border2);
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.65rem;
+        color: rgba(232, 228, 217, 0.45);
+        white-space: nowrap;
+        animation: floatY 5s ease-in-out infinite;
+      }
+      .f-pill:nth-child(2) {
+        animation-delay: 1.5s;
+      }
+      .f-pill:nth-child(3) {
+        animation-delay: 3s;
+      }
+      @keyframes floatY {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-9px);
+        }
+      }
+      .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        opacity: 0;
+        animation: fadeUp 0.8s var(--ease) 1.2s forwards;
+        z-index: 10;
+      }
+      .scroll-hint span {
+        font-family: "Space Mono", monospace;
+        font-size: 0.55rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+      }
+      .scroll-line {
+        width: 1px;
+        height: 36px;
+        background: linear-gradient(var(--gold), transparent);
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+      @keyframes scrollPulse {
+        0% {
+          transform: scaleY(0);
+          transform-origin: top;
+        }
+        50% {
+          transform: scaleY(1);
+          transform-origin: top;
+        }
+        51% {
+          transform: scaleY(1);
+          transform-origin: bottom;
+        }
+        100% {
+          transform: scaleY(0);
+          transform-origin: bottom;
+        }
+      }
 
-/* ── MARQUEE ── */
-.mq-wrap{overflow:hidden;background:var(--surface);padding:.85rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:1}
-.mq-track{display:flex;animation:mq 22s linear infinite;white-space:nowrap}
-.mq-item{display:inline-flex;align-items:center;gap:.7rem;padding:0 1.8rem;font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.18em;color:var(--text-dim)}
-.mq-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
-@keyframes mq{to{transform:translateX(-50%)}}
+      /* ── MARQUEE ── */
+      .mq-wrap {
+        overflow: hidden;
+        background: var(--surface);
+        padding: 0.85rem 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        z-index: 1;
+      }
+      .mq-track {
+        display: flex;
+        animation: mq 22s linear infinite;
+        white-space: nowrap;
+      }
+      .mq-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0 1.8rem;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.18em;
+        color: var(--text-dim);
+      }
+      .mq-dot {
+        width: 4px;
+        height: 4px;
+        background: var(--gold);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      @keyframes mq {
+        to {
+          transform: translateX(-50%);
+        }
+      }
 
-/* ── SECTIONS ── */
-section{padding:6rem 6rem;position:relative;z-index:1}
-.sec-label{font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
-.sec-label::after{content:'';flex:0 0 32px;height:1px;background:var(--gold)}
-.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4vw,4.8rem);line-height:.92;letter-spacing:.01em;margin-bottom:1.4rem;color:var(--text)}
-.sec-title em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--gold-pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+      /* ── SECTIONS ── */
+      section {
+        padding: 6rem 6rem;
+        position: relative;
+        z-index: 1;
+      }
+      .sec-label {
+        font-family: "Space Mono", monospace;
+        font-size: 0.63rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .sec-label::after {
+        content: "";
+        flex: 0 0 32px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .sec-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(2.2rem, 4vw, 4.8rem);
+        line-height: 0.92;
+        letter-spacing: 0.01em;
+        margin-bottom: 1.4rem;
+        color: var(--text);
+      }
+      .sec-title em {
+        font-style: normal;
+        background: linear-gradient(90deg, var(--gold), var(--gold-pale));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
-.reveal.visible{opacity:1;transform:none}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+      /* REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.2s;
+      }
+      .d3 {
+        transition-delay: 0.3s;
+      }
+      .d4 {
+        transition-delay: 0.4s;
+      }
+      .d5 {
+        transition-delay: 0.5s;
+      }
 
-/* ── ABOUT ── */
-#about{background:var(--bg2)}
-.about-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:center}
-.about-img-wrap{position:relative}
-.about-img{width:100%;aspect-ratio:3/4;background:var(--surface) center/cover no-repeat;background-image:url('/zohaib.png');position:relative;overflow:hidden;border:1px solid var(--border);image-rendering:auto}
-.about-img::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,150,58,.18) 0%,transparent 45%),linear-gradient(315deg,rgba(8,12,20,.35) 0%,transparent 55%);mix-blend-mode:overlay;pointer-events:none}
-.about-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(transparent,rgba(8,12,20,.55));pointer-events:none}
-.about-scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(201,150,58,.025) 3px,rgba(201,150,58,.025) 4px);z-index:2;pointer-events:none;mix-blend-mode:overlay}
-.exp-badge{position:absolute;bottom:-1.5rem;left:-1.5rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#080c14;padding:1.1rem 1.4rem;text-align:center;z-index:3}
-.exp-badge .n{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;line-height:1}
-.exp-badge .l{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.85}
-.about-name-v{position:absolute;right:-2.5rem;top:50%;transform:translateY(-50%) rotate(90deg);font-family:'Bebas Neue',sans-serif;font-size:.75rem;letter-spacing:.35em;color:var(--text-dim);white-space:nowrap}
-.about-text p{font-size:.97rem;line-height:1.85;color:var(--text-muted);margin-bottom:1.1rem;font-weight:300}
-.about-text p strong{color:var(--text);font-weight:500}
-.cert-row{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:1.8rem}
-.cert{display:inline-flex;align-items:center;gap:.4rem;padding:.28rem .75rem;border:1px solid var(--border);font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.07em;color:var(--text-dim);border-radius:2px}
-.cert-dot{width:4px;height:4px;background:var(--gold);border-radius:50%}
+      /* ── ABOUT ── */
+      #about {
+        background: var(--bg2);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .about-img-wrap {
+        position: relative;
+      }
+      .about-img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        background: var(--surface) center/cover no-repeat;
+        background-image: url("/zohaib.png");
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        image-rendering: auto;
+      }
+      .about-img::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(135deg, rgba(201, 150, 58, 0.18) 0%, transparent 45%),
+          linear-gradient(315deg, rgba(8, 12, 20, 0.35) 0%, transparent 55%);
+        mix-blend-mode: overlay;
+        pointer-events: none;
+      }
+      .about-img::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 35%;
+        background: linear-gradient(transparent, rgba(8, 12, 20, 0.55));
+        pointer-events: none;
+      }
+      .about-scan {
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(201, 150, 58, 0.025) 3px,
+          rgba(201, 150, 58, 0.025) 4px
+        );
+        z-index: 2;
+        pointer-events: none;
+        mix-blend-mode: overlay;
+      }
+      .exp-badge {
+        position: absolute;
+        bottom: -1.5rem;
+        left: -1.5rem;
+        background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        color: #080c14;
+        padding: 1.1rem 1.4rem;
+        text-align: center;
+        z-index: 3;
+      }
+      .exp-badge .n {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.6rem;
+        line-height: 1;
+      }
+      .exp-badge .l {
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        opacity: 0.85;
+      }
+      .about-name-v {
+        position: absolute;
+        right: -2.5rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.35em;
+        color: var(--text-dim);
+        white-space: nowrap;
+      }
+      .about-text p {
+        font-size: 0.97rem;
+        line-height: 1.85;
+        color: var(--text-muted);
+        margin-bottom: 1.1rem;
+        font-weight: 300;
+      }
+      .about-text p strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+      .cert-row {
+        display: flex;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+        margin-top: 1.8rem;
+      }
+      .cert {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.28rem 0.75rem;
+        border: 1px solid var(--border);
+        font-family: "Space Mono", monospace;
+        font-size: 0.56rem;
+        letter-spacing: 0.07em;
+        color: var(--text-dim);
+        border-radius: 2px;
+      }
+      .cert-dot {
+        width: 4px;
+        height: 4px;
+        background: var(--gold);
+        border-radius: 50%;
+      }
 
-/* ── SERVICES ── */
-#services{background:var(--bg3)}
-.services-intro{font-size:.95rem;color:var(--text-muted);max-width:480px;line-height:1.75;margin-bottom:3.5rem;font-weight:300}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,150,58,.08)}
-.svc-card{background:var(--bg3);padding:2.2rem;position:relative;overflow:hidden;transition:background .3s;-webkit-tap-highlight-color:transparent}
-.svc-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--gold),var(--gold-pale));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
-.svc-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(201,150,58,.04),transparent);opacity:0;transition:opacity .3s;pointer-events:none}
-.svc-card:hover{background:#131b28}
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-card:hover::after{opacity:1}
-.svc-n{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:rgba(201,150,58,.05);line-height:1;margin-bottom:.6rem}
-.svc-icon{width:38px;height:38px;background:var(--gold-dim);border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1rem;transition:background .3s,border-color .3s}
-.svc-card:hover .svc-icon{background:rgba(201,150,58,.2);border-color:rgba(201,150,58,.4)}
-.svc-name{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.03em;color:var(--text);margin-bottom:.6rem}
-.svc-desc{font-size:.78rem;line-height:1.75;color:var(--text-dim);font-weight:300}
-.svc-arrow{position:absolute;bottom:1.2rem;right:1.2rem;color:var(--gold);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s var(--ease);font-size:.85rem}
-.svc-card:hover .svc-arrow{opacity:1;transform:none}
+      /* ── SERVICES ── */
+      #services {
+        background: var(--bg3);
+      }
+      .services-intro {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        max-width: 480px;
+        line-height: 1.75;
+        margin-bottom: 3.5rem;
+        font-weight: 300;
+      }
+      .svc-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(201, 150, 58, 0.08);
+      }
+      .svc-card {
+        background: var(--bg3);
+        padding: 2.2rem;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .svc-card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1.5px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-pale));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s var(--ease);
+      }
+      .svc-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 100%,
+          rgba(201, 150, 58, 0.04),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+      .svc-card:hover {
+        background: #131b28;
+      }
+      .svc-card:hover::before {
+        transform: scaleX(1);
+      }
+      .svc-card:hover::after {
+        opacity: 1;
+      }
+      .svc-n {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 3rem;
+        color: rgba(201, 150, 58, 0.05);
+        line-height: 1;
+        margin-bottom: 0.6rem;
+      }
+      .svc-icon {
+        width: 38px;
+        height: 38px;
+        background: var(--gold-dim);
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        transition:
+          background 0.3s,
+          border-color 0.3s;
+      }
+      .svc-card:hover .svc-icon {
+        background: rgba(201, 150, 58, 0.2);
+        border-color: rgba(201, 150, 58, 0.4);
+      }
+      .svc-name {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.25rem;
+        letter-spacing: 0.03em;
+        color: var(--text);
+        margin-bottom: 0.6rem;
+      }
+      .svc-desc {
+        font-size: 0.78rem;
+        line-height: 1.75;
+        color: var(--text-dim);
+        font-weight: 300;
+      }
+      .svc-arrow {
+        position: absolute;
+        bottom: 1.2rem;
+        right: 1.2rem;
+        color: var(--gold);
+        opacity: 0;
+        transform: translateX(-6px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s var(--ease);
+        font-size: 0.85rem;
+      }
+      .svc-card:hover .svc-arrow {
+        opacity: 1;
+        transform: none;
+      }
 
-/* ── CASES ── */
-#cases{background:var(--bg2)}
-.cases-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
-.cases-sub{font-size:.82rem;color:var(--text-dim);max-width:240px;line-height:1.65;text-align:right;font-weight:300}
-.case-row{display:grid;grid-template-columns:60px 1fr 1fr 110px 50px;align-items:center;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border2);transition:padding-left .4s var(--ease);position:relative;-webkit-tap-highlight-color:transparent}
-.case-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--gold-pale));transform:scaleY(0);transition:transform .4s var(--ease)}
-.case-row:hover{padding-left:1rem}
-.case-row:hover::before{transform:scaleY(1)}
-.case-n{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:rgba(201,150,58,.12)}
-.case-client{font-weight:500;font-size:.97rem;color:var(--text)}
-.case-loc{font-size:.62rem;color:var(--text-dim);letter-spacing:.09em;text-transform:uppercase;margin-top:.2rem;font-family:'Space Mono',monospace}
-.tags{display:flex;flex-wrap:wrap;gap:.3rem}
-.tag{padding:.18rem .55rem;background:rgba(201,150,58,.06);border:1px solid var(--border);font-size:.6rem;letter-spacing:.06em;border-radius:2px;color:var(--text-dim)}
-.case-result-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;background:linear-gradient(135deg,var(--gold),var(--gold-pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.case-result-lbl{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;font-family:'Space Mono',monospace;margin-top:.2rem}
-.case-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-dim);transition:background .2s,border-color .2s,color .2s;margin-left:auto;flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.case-btn:hover,.case-btn:active{background:var(--gold);border-color:var(--gold);color:#080c14}
-.case-details{display:none;grid-column:1/-1;background:rgba(201,150,58,.03);border:1px solid var(--border);padding:1.4rem 1.8rem;margin-top:.4rem}
-.case-details.open{display:block}
-.case-dg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.db strong{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:.4rem;font-family:'Space Mono',monospace}
-.db p{font-size:.83rem;line-height:1.75;color:var(--text-muted);font-weight:300}
+      /* ── CASES ── */
+      #cases {
+        background: var(--bg2);
+      }
+      .cases-hdr {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .cases-sub {
+        font-size: 0.82rem;
+        color: var(--text-dim);
+        max-width: 240px;
+        line-height: 1.65;
+        text-align: right;
+        font-weight: 300;
+      }
+      .case-row {
+        display: grid;
+        grid-template-columns: 60px 1fr 1fr 110px 50px;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border2);
+        transition:
+          padding-left 0.4s var(--ease),
+          outline 0.2s var(--ease);
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+      }
+      .case-row::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(var(--gold), var(--gold-pale));
+        transform: scaleY(0);
+        transition: transform 0.4s var(--ease);
+      }
+      .case-row:hover {
+        padding-left: 1rem;
+      }
+      .case-row:hover::before {
+        transform: scaleY(1);
+      }
+      .case-row:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: -2px;
+        padding-left: 1rem;
+      }
+      .case-row:focus-visible::before {
+        transform: scaleY(1);
+      }
+      .case-n {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.8rem;
+        color: rgba(201, 150, 58, 0.12);
+      }
+      .case-client {
+        font-weight: 500;
+        font-size: 0.97rem;
+        color: var(--text);
+      }
+      .case-loc {
+        font-size: 0.62rem;
+        color: var(--text-dim);
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        margin-top: 0.2rem;
+        font-family: "Space Mono", monospace;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+      .tag {
+        padding: 0.18rem 0.55rem;
+        background: rgba(201, 150, 58, 0.06);
+        border: 1px solid var(--border);
+        font-size: 0.6rem;
+        letter-spacing: 0.06em;
+        border-radius: 2px;
+        color: var(--text-dim);
+      }
+      .case-result-num {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, var(--gold), var(--gold-pale));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+      .case-result-lbl {
+        font-size: 0.6rem;
+        color: var(--text-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        font-family: "Space Mono", monospace;
+        margin-top: 0.2rem;
+      }
+      .case-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: var(--text-dim);
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          color 0.2s;
+        margin-left: auto;
+        flex-shrink: 0;
+        user-select: none;
+      }
+      .case-row:hover .case-btn,
+      .case-row:focus-visible .case-btn {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: #080c14;
+      }
+      .case-details {
+        display: none;
+        grid-column: 1/-1;
+        background: rgba(201, 150, 58, 0.03);
+        border: 1px solid var(--border);
+        padding: 1.4rem 1.8rem;
+        margin-top: 0.4rem;
+      }
+      .case-details.open {
+        display: block;
+      }
+      .case-dg {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem;
+      }
+      .db strong {
+        display: block;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--gold);
+        margin-bottom: 0.4rem;
+        font-family: "Space Mono", monospace;
+      }
+      .db p {
+        font-size: 0.83rem;
+        line-height: 1.75;
+        color: var(--text-muted);
+        font-weight: 300;
+      }
 
-/* ── PROCESS ── */
-#process{background:var(--bg)}
-.proc-wrap{position:relative;margin-top:2.5rem}
-.proc-wrap::before{content:'';position:absolute;left:2.1rem;top:0;bottom:0;width:1px;background:linear-gradient(var(--border),var(--border) 80%,transparent)}
-.proc-step{display:grid;grid-template-columns:4.2rem 1fr;gap:1.8rem;margin-bottom:3rem}
-.step-node{width:4.2rem;display:flex;justify-content:center;padding-top:.1rem}
-.step-circle{width:34px;height:34px;border-radius:50%;background:var(--bg);border:1px solid var(--text-dim);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:.6rem;color:var(--text-dim);position:relative;z-index:2;transition:background .3s,border-color .3s,color .3s,box-shadow .3s}
-.proc-step:hover .step-circle{background:var(--gold);border-color:var(--gold);color:#080c14;box-shadow:0 0 18px rgba(201,150,58,.3)}
-.step-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.03em;color:var(--text);margin-bottom:.4rem}
-.step-desc{font-size:.86rem;line-height:1.8;color:var(--text-muted);font-weight:300;max-width:540px}
-.step-dur{display:inline-block;margin-top:.7rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+      /* ── PROCESS ── */
+      #process {
+        background: var(--bg);
+      }
+      .proc-wrap {
+        position: relative;
+        margin-top: 2.5rem;
+      }
+      .proc-wrap::before {
+        content: "";
+        position: absolute;
+        left: 2.1rem;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(var(--border), var(--border) 80%, transparent);
+      }
+      .proc-step {
+        display: grid;
+        grid-template-columns: 4.2rem 1fr;
+        gap: 1.8rem;
+        margin-bottom: 3rem;
+      }
+      .step-node {
+        width: 4.2rem;
+        display: flex;
+        justify-content: center;
+        padding-top: 0.1rem;
+      }
+      .step-circle {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 1px solid var(--text-dim);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Space Mono", monospace;
+        font-size: 0.6rem;
+        color: var(--text-dim);
+        position: relative;
+        z-index: 2;
+        transition:
+          background 0.3s,
+          border-color 0.3s,
+          color 0.3s,
+          box-shadow 0.3s;
+      }
+      .proc-step:hover .step-circle {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: #080c14;
+        box-shadow: 0 0 18px rgba(201, 150, 58, 0.3);
+      }
+      .step-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        color: var(--text);
+        margin-bottom: 0.4rem;
+      }
+      .step-desc {
+        font-size: 0.86rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+        font-weight: 300;
+        max-width: 540px;
+      }
+      .step-dur {
+        display: inline-block;
+        margin-top: 0.7rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        color: var(--gold);
+      }
 
-/* ── TESTIMONIALS ── */
-#testimonials{background:var(--bg3)}
-.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:3.5rem}
-.testi-card{background:var(--surface);border:1px solid var(--border2);padding:2.2rem;position:relative;overflow:hidden;transition:border-color .3s,background .3s}
-.testi-card:hover{border-color:var(--border);background:var(--surface2)}
-.testi-card::before{content:'"';position:absolute;top:-2rem;right:1.2rem;font-family:'Bebas Neue',sans-serif;font-size:9rem;color:rgba(201,150,58,.05);line-height:1;pointer-events:none}
-.testi-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}
-.testi-card:hover::after{opacity:.4}
-.stars{color:var(--gold);font-size:.68rem;letter-spacing:.12em;margin-bottom:.9rem}
-.testi-text{font-size:.88rem;line-height:1.85;color:var(--text-muted);font-weight:300;font-style:italic;margin-bottom:1.8rem}
-.testi-author{display:flex;align-items:center;gap:.9rem}
-.author-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-pale));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:.95rem;color:#080c14;flex-shrink:0}
-.author-name{font-weight:500;font-size:.86rem;color:var(--text)}
-.author-meta{font-size:.65rem;color:var(--text-dim);margin-top:.15rem}
+      /* ── TESTIMONIALS ── */
+      #testimonials {
+        background: var(--bg3);
+      }
+      .testi-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.4rem;
+        margin-top: 3.5rem;
+      }
+      .testi-card {
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        padding: 2.2rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .testi-card:hover {
+        border-color: var(--border);
+        background: var(--surface2);
+      }
+      .testi-card::before {
+        content: '"';
+        position: absolute;
+        top: -2rem;
+        right: 1.2rem;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 9rem;
+        color: rgba(201, 150, 58, 0.05);
+        line-height: 1;
+        pointer-events: none;
+      }
+      .testi-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .testi-card:hover::after {
+        opacity: 0.4;
+      }
+      .stars {
+        color: var(--gold);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        margin-bottom: 0.9rem;
+      }
+      .testi-text {
+        font-size: 0.88rem;
+        line-height: 1.85;
+        color: var(--text-muted);
+        font-weight: 300;
+        font-style: italic;
+        margin-bottom: 1.8rem;
+      }
+      .testi-author {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+      .author-av {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gold), var(--gold-pale));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 0.95rem;
+        color: #080c14;
+        flex-shrink: 0;
+      }
+      .author-name {
+        font-weight: 500;
+        font-size: 0.86rem;
+        color: var(--text);
+      }
+      .author-meta {
+        font-size: 0.65rem;
+        color: var(--text-dim);
+        margin-top: 0.15rem;
+      }
 
-/* ── CTA ── */
-#cta{background:var(--bg2);text-align:center;position:relative;overflow:hidden}
-#cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(201,150,58,.06),transparent);pointer-events:none}
-#cta .sec-label{justify-content:center}
-#cta .sec-label::after{background:rgba(201,150,58,.4)}
-.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,7rem);line-height:.9;letter-spacing:.01em;color:var(--text);margin-bottom:1rem}
-.cta-title em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--gold-pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cta-sub{font-size:1rem;color:var(--text-muted);max-width:440px;margin:.5rem auto 2.2rem;font-weight:300;line-height:1.75}
-.cta-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
-.btn-gold-lg{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#080c14;padding:.95rem 2.2rem;font-weight:700;font-size:.83rem;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s;-webkit-tap-highlight-color:transparent;position:relative;z-index:5;pointer-events:auto}
-.btn-gold-lg:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(201,150,58,.4)}
-.btn-outline-gold{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);color:var(--text-muted);padding:.95rem 1.8rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;transition:border-color .2s,color .2s;-webkit-tap-highlight-color:transparent}
-.btn-outline-gold:hover{border-color:var(--gold);color:var(--gold)}
-.cta-info{display:flex;gap:2.5rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap}
-.cta-info-item{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--text-dim)}
+      /* ── CTA ── */
+      #cta {
+        background: var(--bg2);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      #cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 70% at 50% 50%,
+          rgba(201, 150, 58, 0.06),
+          transparent
+        );
+        pointer-events: none;
+      }
+      #cta .sec-label {
+        justify-content: center;
+      }
+      #cta .sec-label::after {
+        background: rgba(201, 150, 58, 0.4);
+      }
+      .cta-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(3rem, 6vw, 7rem);
+        line-height: 0.9;
+        letter-spacing: 0.01em;
+        color: var(--text);
+        margin-bottom: 1rem;
+      }
+      .cta-title em {
+        font-style: normal;
+        background: linear-gradient(90deg, var(--gold), var(--gold-pale));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .cta-sub {
+        font-size: 1rem;
+        color: var(--text-muted);
+        max-width: 440px;
+        margin: 0.5rem auto 2.2rem;
+        font-weight: 300;
+        line-height: 1.75;
+      }
+      .cta-btns {
+        display: flex;
+        gap: 0.9rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+      }
+      .btn-gold-lg {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        color: #080c14;
+        padding: 0.95rem 2.2rem;
+        font-weight: 700;
+        font-size: 0.83rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        transition:
+          transform 0.2s var(--ease),
+          box-shadow 0.2s;
+        -webkit-tap-highlight-color: transparent;
+        position: relative;
+        z-index: 5;
+        pointer-events: auto;
+      }
+      .btn-gold-lg:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 36px rgba(201, 150, 58, 0.4);
+      }
+      .btn-outline-gold {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid var(--border);
+        color: var(--text-muted);
+        padding: 0.95rem 1.8rem;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .btn-outline-gold:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .cta-info {
+        display: flex;
+        gap: 2.5rem;
+        justify-content: center;
+        margin-top: 2.5rem;
+        flex-wrap: wrap;
+      }
+      .cta-info-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        color: var(--text-dim);
+      }
 
-/* ── FOOTER ── */
-footer{background:#04070d;color:var(--text-dim);padding:1.8rem 6rem;display:flex;justify-content:space-between;align-items:center;font-size:.7rem;letter-spacing:.05em;border-top:1px solid rgba(201,150,58,.08);flex-wrap:wrap;gap:.8rem}
-footer a{color:var(--gold);text-decoration:none;transition:color .2s}
-footer a:hover{color:var(--gold-pale)}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:rgba(232,228,217,.4)}
-.footer-logo span{color:var(--gold)}
+      /* ── FOOTER ── */
+      footer {
+        background: #04070d;
+        color: var(--text-dim);
+        padding: 1.8rem 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.7rem;
+        letter-spacing: 0.05em;
+        border-top: 1px solid rgba(201, 150, 58, 0.08);
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      footer a {
+        color: var(--gold);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      footer a:hover {
+        color: var(--gold-pale);
+      }
+      .footer-logo {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        color: rgba(232, 228, 217, 0.4);
+      }
+      .footer-logo span {
+        color: var(--gold);
+      }
 
-@keyframes fadeUp{to{opacity:1;transform:none}}
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
 
-/* ══════════════════════════════
+      /* ══════════════════════════════
    RESPONSIVE BREAKPOINTS
 ══════════════════════════════ */
 
-/* ── Large tablet / small laptop (≤1200px) ── */
-@media(max-width:1200px){
-  section{padding:5.5rem 4rem}
-  nav{padding:0 2.5rem}
-  .hero-left{padding:3rem 2.5rem 3rem 4rem}
-  .svc-grid{grid-template-columns:repeat(2,1fr)}
-  footer{padding:1.8rem 4rem}
-}
+      /* ── Large tablet / small laptop (≤1200px) ── */
+      @media (max-width: 1200px) {
+        section {
+          padding: 5.5rem 4rem;
+        }
+        nav {
+          padding: 0 2.5rem;
+        }
+        .hero-left {
+          padding: 3rem 2.5rem 3rem 4rem;
+        }
+        .svc-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        footer {
+          padding: 1.8rem 4rem;
+        }
+      }
 
-/* ── Tablet landscape (≤1024px) ── */
-@media(max-width:1024px){
-  :root{--nav-h:64px}
-  section{padding:5rem 3rem}
-  nav{padding:0 2rem}
-  .nav-links{gap:1.6rem}
-  .hero-left{padding:3rem 2rem 3rem 3rem}
-  .f-pills.l,.f-pills.r{display:none}
-  .about-grid{grid-template-columns:1fr 1.2fr;gap:3.5rem}
-  .case-row{grid-template-columns:50px 1fr 1fr 90px 44px;gap:1.2rem}
-  footer{padding:1.6rem 3rem}
-}
+      /* ── Tablet landscape (≤1024px) ── */
+      @media (max-width: 1024px) {
+        :root {
+          --nav-h: 64px;
+        }
+        section {
+          padding: 5rem 3rem;
+        }
+        nav {
+          padding: 0 2rem;
+        }
+        .nav-links {
+          gap: 1.6rem;
+        }
+        .hero-left {
+          padding: 3rem 2rem 3rem 3rem;
+        }
+        .f-pills.l,
+        .f-pills.r {
+          display: none;
+        }
+        .about-grid {
+          grid-template-columns: 1fr 1.2fr;
+          gap: 3.5rem;
+        }
+        .case-row {
+          grid-template-columns: 50px 1fr 1fr 90px 44px;
+          gap: 1.2rem;
+        }
+        footer {
+          padding: 1.6rem 3rem;
+        }
+      }
 
-/* ── Tablet portrait (≤768px) ── */
-@media(max-width:768px){
-  :root{--nav-h:60px}
-  section{padding:4.5rem 2rem}
-  nav{padding:0 1.5rem}
-  /* Show hamburger, hide links */
-  .nav-links{display:none}
-  .ham{display:flex}
-  /* Hero: stack vertically */
-  #hero{grid-template-columns:1fr;grid-template-rows:auto auto}
-  .hero-left{padding:2.5rem 2rem 2rem;text-align:center;align-items:center}
-  .hero-tag{justify-content:center}
-  .hero-desc{text-align:center;max-width:100%}
-  .hero-ctas{justify-content:center}
-  .hero-stats{justify-content:center;gap:2rem}
-  .hero-right{min-height:320px;padding:2rem 0}
-  .scroll-hint{display:none}
-  /* About: stack */
-  .about-grid{grid-template-columns:1fr;gap:3rem}
-  .about-img-wrap{width:min(320px,85%);margin:0 auto 1rem}
-  .about-name-v{display:none}
-  .exp-badge{bottom:-1rem;left:0;padding:.9rem 1.1rem}
-  .exp-badge .n{font-size:2.2rem}
-  /* Cases: simpler grid */
-  .case-row{grid-template-columns:40px 1fr 40px;gap:1rem}
-  .tags,.case-result-num,.case-result-lbl{display:none}
-  .case-dg{grid-template-columns:1fr;gap:1rem}
-  /* Process */
-  .proc-step{grid-template-columns:3.5rem 1fr;gap:1.2rem}
-  /* Testimonials */
-  .testi-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;text-align:center;padding:1.5rem 2rem;gap:.6rem}
-}
+      /* ── Tablet portrait (≤768px) ── */
+      @media (max-width: 768px) {
+        :root {
+          --nav-h: 60px;
+        }
+        section {
+          padding: 4.5rem 2rem;
+        }
+        nav {
+          padding: 0 1.5rem;
+        }
+        /* Show hamburger, hide links */
+        .nav-links {
+          display: none;
+        }
+        .ham {
+          display: flex;
+        }
+        /* Hero: stack vertically */
+        #hero {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+        }
+        .hero-left {
+          padding: 2.5rem 2rem 2rem;
+          text-align: center;
+          align-items: center;
+        }
+        .hero-tag {
+          justify-content: center;
+        }
+        .hero-desc {
+          text-align: center;
+          max-width: 100%;
+        }
+        .hero-ctas {
+          justify-content: center;
+        }
+        .hero-stats {
+          justify-content: center;
+          gap: 2rem;
+        }
+        .hero-right {
+          min-height: 320px;
+          padding: 2rem 0;
+        }
+        .scroll-hint {
+          display: none;
+        }
+        /* About: stack */
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .about-img-wrap {
+          width: min(320px, 85%);
+          margin: 0 auto 1rem;
+        }
+        .about-name-v {
+          display: none;
+        }
+        .exp-badge {
+          bottom: -1rem;
+          left: 0;
+          padding: 0.9rem 1.1rem;
+        }
+        .exp-badge .n {
+          font-size: 2.2rem;
+        }
+        /* Cases: simpler grid */
+        .case-row {
+          grid-template-columns: 40px 1fr 40px;
+          gap: 1rem;
+        }
+        .tags,
+        .case-result-num,
+        .case-result-lbl {
+          display: none;
+        }
+        .case-dg {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        /* Process */
+        .proc-step {
+          grid-template-columns: 3.5rem 1fr;
+          gap: 1.2rem;
+        }
+        /* Testimonials */
+        .testi-grid {
+          grid-template-columns: 1fr;
+        }
+        footer {
+          flex-direction: column;
+          text-align: center;
+          padding: 1.5rem 2rem;
+          gap: 0.6rem;
+        }
+      }
 
-/* ── Mobile large (≤600px) ── */
-@media(max-width:600px){
-  section{padding:4rem 1.5rem}
-  nav{padding:0 1.2rem}
-  .hero-left{padding:2rem 1.5rem 1.5rem}
-  .hero-h1{font-size:clamp(3rem,13vw,5rem)}
-  .hero-stats{gap:1.5rem}
-  .stat-num{font-size:2.2rem}
-  .svc-grid{grid-template-columns:1fr}
-  .cases-hdr{flex-direction:column;align-items:flex-start}
-  .cases-sub{text-align:left;max-width:100%}
-  .case-row{grid-template-columns:1fr 36px;gap:.8rem;padding:1.5rem 0}
-  .case-n{display:none}
-  .case-details{padding:1rem 1.2rem}
-  #cta{padding:4rem 1.5rem}
-  .cta-info{gap:1.2rem;flex-direction:column;align-items:center}
-  footer{padding:1.5rem 1.2rem}
-}
+      /* ── Mobile large (≤600px) ── */
+      @media (max-width: 600px) {
+        section {
+          padding: 4rem 1.5rem;
+        }
+        nav {
+          padding: 0 1.2rem;
+        }
+        .hero-left {
+          padding: 2rem 1.5rem 1.5rem;
+        }
+        .hero-h1 {
+          font-size: clamp(3rem, 13vw, 5rem);
+        }
+        .hero-stats {
+          gap: 1.5rem;
+        }
+        .stat-num {
+          font-size: 2.2rem;
+        }
+        .svc-grid {
+          grid-template-columns: 1fr;
+        }
+        .cases-hdr {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .cases-sub {
+          text-align: left;
+          max-width: 100%;
+        }
+        .case-row {
+          grid-template-columns: 1fr 36px;
+          gap: 0.8rem;
+          padding: 1.5rem 0;
+        }
+        .case-n {
+          display: none;
+        }
+        .case-details {
+          padding: 1rem 1.2rem;
+        }
+        #cta {
+          padding: 4rem 1.5rem;
+        }
+        .cta-info {
+          gap: 1.2rem;
+          flex-direction: column;
+          align-items: center;
+        }
+        footer {
+          padding: 1.5rem 1.2rem;
+        }
+      }
 
-/* ── Mobile small (≤380px) ── */
-@media(max-width:380px){
-  section{padding:3.5rem 1.2rem}
-  .hero-h1{font-size:clamp(2.6rem,12vw,4rem)}
-  .hero-ctas{flex-direction:column;width:100%}
-  .btn-gold,.btn-ghost{width:100%;justify-content:center}
-  .orb-outer{width:min(260px,80vw);height:min(260px,80vw)}
-  .sec-title{font-size:clamp(2rem,10vw,3rem)}
-}
+      /* ── Mobile small (≤380px) ── */
+      @media (max-width: 380px) {
+        section {
+          padding: 3.5rem 1.2rem;
+        }
+        .hero-h1 {
+          font-size: clamp(2.6rem, 12vw, 4rem);
+        }
+        .hero-ctas {
+          flex-direction: column;
+          width: 100%;
+        }
+        .btn-gold,
+        .btn-ghost {
+          width: 100%;
+          justify-content: center;
+        }
+        .orb-outer {
+          width: min(260px, 80vw);
+          height: min(260px, 80vw);
+        }
+        .sec-title {
+          font-size: clamp(2rem, 10vw, 3rem);
+        }
+      }
 
-/* ── Ensure no horizontal scroll on any device ── */
-html,body{max-width:100%;overflow-x:hidden}
-</style>
-</head>
-<body>
+      /* ── Ensure no horizontal scroll on any device ── */
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cur"></div>
+    <div id="cur-ring"></div>
+    <div id="stars"></div>
 
-<div id="cur"></div>
-<div id="cur-ring"></div>
-<div id="stars"></div>
-
-<!-- Mobile Nav Drawer -->
-<div class="nav-drawer" id="drawer">
-  <a href="#about" onclick="closeDrawer()">About</a>
-  <a href="#services" onclick="closeDrawer()">Services</a>
-  <a href="#cases" onclick="closeDrawer()">Results</a>
-  <a href="#process" onclick="closeDrawer()">Process</a>
-  <a href="#testimonials" onclick="closeDrawer()">Reviews</a>
-  <a href="https://web.whatsapp.com/send?phone=923077551304" target="_top" class="drawer-cta js-whatsapp" onclick="closeDrawer()">📲 Book Free Audit</a>
-</div>
-
-<!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-logo">SZA<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#cases">Results</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="https://web.whatsapp.com/send?phone=923077551304" target="_top" class="nav-cta js-whatsapp">Book Free Audit</a></li>
-  </ul>
-  <button class="ham" id="ham" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-bg-radial"></div>
-  </div>
-  <div class="hero-left">
-    <div class="hero-tag">Certified Local SEO Expert — Lahore, PK</div>
-    <h1 class="hero-h1">
-      <span class="l1">Rank #1</span>
-      <span class="l2">Locally.</span>
-      <span class="l3">Get Found.</span>
-    </h1>
-    <p class="hero-desc">I'm Syed Zohaib Ali — a certified Local SEO Specialist & GMB Expert helping businesses in Lahore and internationally dominate Google Maps and local search.</p>
-    <div class="hero-ctas">
-      <a href="https://web.whatsapp.com/send?phone=923077551304" target="_top" class="btn-gold js-whatsapp">📲 WhatsApp Me</a>
-      <a href="#cases" class="btn-ghost">See Results →</a>
+    <!-- Mobile Nav Drawer -->
+    <div class="nav-drawer" id="drawer">
+      <a href="#about" onclick="closeDrawer()">About</a>
+      <a href="#services" onclick="closeDrawer()">Services</a>
+      <a href="#cases" onclick="closeDrawer()">Results</a>
+      <a href="#process" onclick="closeDrawer()">Process</a>
+      <a href="#testimonials" onclick="closeDrawer()">Reviews</a>
+      <a
+        href="https://web.whatsapp.com/send?phone=923077551304"
+        target="_top"
+        class="drawer-cta js-whatsapp"
+        onclick="closeDrawer()"
+        >📲 Book Free Audit</a
+      >
     </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num"><span class="count-up" data-target="100">0</span>+</div>
-        <div class="stat-label">Clients Served</div>
+
+    <!-- NAV -->
+    <nav id="nav">
+      <a href="#" class="nav-logo">SZA<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#cases">Results</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li>
+          <a
+            href="https://web.whatsapp.com/send?phone=923077551304"
+            target="_top"
+            class="nav-cta js-whatsapp"
+            >Book Free Audit</a
+          >
+        </li>
+      </ul>
+      <button class="ham" id="ham" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-bg-radial"></div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num"><span class="count-up" data-target="5">0</span></div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num"><span class="count-up" data-target="4">0</span></div>
-        <div class="stat-label">Countries</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-right-bg"></div>
-    <div class="f-pills l">
-      <div class="f-pill">📍 Google Maps #1</div>
-      <div class="f-pill">⭐ GMB Expert</div>
-      <div class="f-pill">📈 Local Rankings</div>
-    </div>
-    <div class="hero-visual">
-      <div class="orb-outer">
-        <div class="orb-dot"></div><div class="orb-dot"></div>
-        <div class="orb-dot"></div><div class="orb-dot"></div>
-        <div class="orbit-pill pill-t">GMB Expert</div>
-        <div class="orb-middle">
-          <div class="orb-core">
-            <div class="orb-initials">SZA</div>
+      <div class="hero-left">
+        <div class="hero-tag">Certified Local SEO Expert — Lahore, PK</div>
+        <h1 class="hero-h1">
+          <span class="l1">Rank #1</span>
+          <span class="l2">Locally.</span>
+          <span class="l3">Get Found.</span>
+        </h1>
+        <p class="hero-desc">
+          I'm Syed Zohaib Ali — a certified Local SEO Specialist & GMB Expert helping businesses in
+          Lahore and internationally dominate Google Maps and local search.
+        </p>
+        <div class="hero-ctas">
+          <a
+            href="https://web.whatsapp.com/send?phone=923077551304"
+            target="_top"
+            class="btn-gold js-whatsapp"
+            >📲 WhatsApp Me</a
+          >
+          <a href="#cases" class="btn-ghost">See Results →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num"><span class="count-up" data-target="100">0</span>+</div>
+            <div class="stat-label">Clients Served</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span class="count-up" data-target="5">0</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span class="count-up" data-target="4">0</span></div>
+            <div class="stat-label">Countries</div>
           </div>
         </div>
-        <div class="orbit-pill pill-b">Local SEO Pro</div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-right-bg"></div>
+        <div class="f-pills l">
+          <div class="f-pill">📍 Google Maps #1</div>
+          <div class="f-pill">⭐ GMB Expert</div>
+          <div class="f-pill">📈 Local Rankings</div>
+        </div>
+        <div class="hero-visual">
+          <div class="orb-outer">
+            <div class="orb-dot"></div>
+            <div class="orb-dot"></div>
+            <div class="orb-dot"></div>
+            <div class="orb-dot"></div>
+            <div class="orbit-pill pill-t">GMB Expert</div>
+            <div class="orb-middle">
+              <div class="orb-core">
+                <div class="orb-initials">SZA</div>
+              </div>
+            </div>
+            <div class="orbit-pill pill-b">Local SEO Pro</div>
+          </div>
+        </div>
+        <div class="f-pills r">
+          <div class="f-pill">🇵🇰 Lahore Based</div>
+          <div class="f-pill">🌍 USA · UK · UAE</div>
+          <div class="f-pill">🏆 100+ Clients</div>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="mq-wrap">
+      <div class="mq-track">
+        <div class="mq-item"><span class="mq-dot"></span>Local SEO Lahore</div>
+        <div class="mq-item"><span class="mq-dot"></span>Google Business Profile</div>
+        <div class="mq-item"><span class="mq-dot"></span>GMB Ranking</div>
+        <div class="mq-item"><span class="mq-dot"></span>Citation Building</div>
+        <div class="mq-item"><span class="mq-dot"></span>Google Maps SEO</div>
+        <div class="mq-item"><span class="mq-dot"></span>On-Page SEO</div>
+        <div class="mq-item"><span class="mq-dot"></span>Review Management</div>
+        <div class="mq-item"><span class="mq-dot"></span>Technical SEO</div>
+        <div class="mq-item"><span class="mq-dot"></span>Keyword Research</div>
+        <div class="mq-item"><span class="mq-dot"></span>WordPress SEO</div>
+        <div class="mq-item"><span class="mq-dot"></span>Local SEO Lahore</div>
+        <div class="mq-item"><span class="mq-dot"></span>Google Business Profile</div>
+        <div class="mq-item"><span class="mq-dot"></span>GMB Ranking</div>
+        <div class="mq-item"><span class="mq-dot"></span>Citation Building</div>
+        <div class="mq-item"><span class="mq-dot"></span>Google Maps SEO</div>
+        <div class="mq-item"><span class="mq-dot"></span>On-Page SEO</div>
+        <div class="mq-item"><span class="mq-dot"></span>Review Management</div>
+        <div class="mq-item"><span class="mq-dot"></span>Technical SEO</div>
+        <div class="mq-item"><span class="mq-dot"></span>Keyword Research</div>
+        <div class="mq-item"><span class="mq-dot"></span>WordPress SEO</div>
       </div>
     </div>
-    <div class="f-pills r">
-      <div class="f-pill">🇵🇰 Lahore Based</div>
-      <div class="f-pill">🌍 USA · UK · UAE</div>
-      <div class="f-pill">🏆 100+ Clients</div>
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
 
-<!-- MARQUEE -->
-<div class="mq-wrap">
-  <div class="mq-track">
-    <div class="mq-item"><span class="mq-dot"></span>Local SEO Lahore</div>
-    <div class="mq-item"><span class="mq-dot"></span>Google Business Profile</div>
-    <div class="mq-item"><span class="mq-dot"></span>GMB Ranking</div>
-    <div class="mq-item"><span class="mq-dot"></span>Citation Building</div>
-    <div class="mq-item"><span class="mq-dot"></span>Google Maps SEO</div>
-    <div class="mq-item"><span class="mq-dot"></span>On-Page SEO</div>
-    <div class="mq-item"><span class="mq-dot"></span>Review Management</div>
-    <div class="mq-item"><span class="mq-dot"></span>Technical SEO</div>
-    <div class="mq-item"><span class="mq-dot"></span>Keyword Research</div>
-    <div class="mq-item"><span class="mq-dot"></span>WordPress SEO</div>
-    <div class="mq-item"><span class="mq-dot"></span>Local SEO Lahore</div>
-    <div class="mq-item"><span class="mq-dot"></span>Google Business Profile</div>
-    <div class="mq-item"><span class="mq-dot"></span>GMB Ranking</div>
-    <div class="mq-item"><span class="mq-dot"></span>Citation Building</div>
-    <div class="mq-item"><span class="mq-dot"></span>Google Maps SEO</div>
-    <div class="mq-item"><span class="mq-dot"></span>On-Page SEO</div>
-    <div class="mq-item"><span class="mq-dot"></span>Review Management</div>
-    <div class="mq-item"><span class="mq-dot"></span>Technical SEO</div>
-    <div class="mq-item"><span class="mq-dot"></span>Keyword Research</div>
-    <div class="mq-item"><span class="mq-dot"></span>WordPress SEO</div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div class="about-img-wrap reveal">
-      <div class="about-img">
-        <div class="about-scan"></div>
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <div class="about-img">
+            <div class="about-scan"></div>
+          </div>
+          <div class="about-name-v">Syed Zohaib Ali — Local SEO Expert</div>
+          <div class="exp-badge">
+            <div class="n">5+</div>
+            <div class="l">Years<br />Experience</div>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="sec-label reveal">About Me</div>
+          <h2 class="sec-title reveal d1">The Expert<br /><em>Behind Results</em></h2>
+          <p class="reveal d2">
+            Hi, I'm <strong>Syed Zohaib Ali</strong> from Lahore, Pakistan — a certified
+            <strong>Local SEO Specialist, GMB Expert, Content Strategist</strong> and
+            <strong>WordPress Developer</strong> with 5 years of hands-on experience.
+          </p>
+          <p class="reveal d3">
+            I've helped <strong>100+ clients</strong> in Lahore and international markets including
+            the <strong>USA, UK, Australia and UAE</strong> grow online, attract customers and
+            improve their local visibility.
+          </p>
+          <p class="reveal d4">
+            My approach combines <strong>AI-powered ranking strategies</strong>, Google Business
+            Profile optimization and deep local keyword research to make your business the top
+            choice in your area.
+          </p>
+          <div class="cert-row reveal d5">
+            <span class="cert"><span class="cert-dot"></span>Certified Local SEO</span>
+            <span class="cert"><span class="cert-dot"></span>GMB Expert</span>
+            <span class="cert"><span class="cert-dot"></span>WordPress Dev</span>
+            <span class="cert"><span class="cert-dot"></span>Content Strategist</span>
+            <span class="cert"><span class="cert-dot"></span>AI-Powered SEO</span>
+          </div>
+        </div>
       </div>
-      <div class="about-name-v">Syed Zohaib Ali — Local SEO Expert</div>
-      <div class="exp-badge"><div class="n">5+</div><div class="l">Years<br>Experience</div></div>
-    </div>
-    <div class="about-text">
-      <div class="sec-label reveal">About Me</div>
-      <h2 class="sec-title reveal d1">The Expert<br><em>Behind Results</em></h2>
-      <p class="reveal d2">Hi, I'm <strong>Syed Zohaib Ali</strong> from Lahore, Pakistan — a certified <strong>Local SEO Specialist, GMB Expert, Content Strategist</strong> and <strong>WordPress Developer</strong> with 5 years of hands-on experience.</p>
-      <p class="reveal d3">I've helped <strong>100+ clients</strong> in Lahore and international markets including the <strong>USA, UK, Australia and UAE</strong> grow online, attract customers and improve their local visibility.</p>
-      <p class="reveal d4">My approach combines <strong>AI-powered ranking strategies</strong>, Google Business Profile optimization and deep local keyword research to make your business the top choice in your area.</p>
-      <div class="cert-row reveal d5">
-        <span class="cert"><span class="cert-dot"></span>Certified Local SEO</span>
-        <span class="cert"><span class="cert-dot"></span>GMB Expert</span>
-        <span class="cert"><span class="cert-dot"></span>WordPress Dev</span>
-        <span class="cert"><span class="cert-dot"></span>Content Strategist</span>
-        <span class="cert"><span class="cert-dot"></span>AI-Powered SEO</span>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="sec-label reveal">What I Offer</div>
+      <h2 class="sec-title reveal d1">Services That<br /><em>Drive Rankings</em></h2>
+      <p class="services-intro reveal d2">
+        Complete local SEO solutions for businesses in Lahore and worldwide — from Google Maps
+        domination to full technical SEO.
+      </p>
+      <div class="svc-grid">
+        <div class="svc-card reveal">
+          <div class="svc-n">01</div>
+          <div class="svc-icon">📍</div>
+          <div class="svc-name">Local SEO Services</div>
+          <p class="svc-desc">
+            Full-stack local SEO strategy to dominate your city's search results. Geo-targeted
+            content, local link building and citation management for Lahore businesses.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-card reveal d1">
+          <div class="svc-n">02</div>
+          <div class="svc-icon">🗺️</div>
+          <div class="svc-name">Google Business Profile</div>
+          <p class="svc-desc">
+            Complete GMB setup, optimization and ongoing management. Posts, Q&A, photo optimization
+            and category selection that gets you into the Local 3-Pack.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-card reveal d2">
+          <div class="svc-n">03</div>
+          <div class="svc-icon">🏆</div>
+          <div class="svc-name">GMB Ranking Services</div>
+          <p class="svc-desc">
+            Proven strategies to rank your Google Business Profile higher on Maps. Geo-grid
+            tracking, proximity signals, and authority-building for sustained visibility.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-card reveal d1">
+          <div class="svc-n">04</div>
+          <div class="svc-icon">🔗</div>
+          <div class="svc-name">Citation Building</div>
+          <p class="svc-desc">
+            NAP-consistent listings across 50+ high-authority local directories. Yext, Yelp,
+            Foursquare and Pakistan-specific sources that build local trust signals.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-card reveal d2">
+          <div class="svc-n">05</div>
+          <div class="svc-icon">⚙️</div>
+          <div class="svc-name">Technical SEO</div>
+          <p class="svc-desc">
+            Site speed, Core Web Vitals, schema markup, crawlability fixes and mobile optimization.
+            A technically sound website that Google loves to rank.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-card reveal d3">
+          <div class="svc-n">06</div>
+          <div class="svc-icon">⭐</div>
+          <div class="svc-name">Review Management</div>
+          <p class="svc-desc">
+            Automated review generation campaigns, response templates and reputation monitoring.
+            More 5-star reviews that convert searchers into customers.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-n">07</div>
+          <div class="svc-icon">🔍</div>
+          <div class="svc-name">Local Keyword Research</div>
+          <p class="svc-desc">
+            Hyper-local keyword mapping for Lahore and surrounding areas. Find the gaps your
+            competitors miss and dominate low-competition, high-intent searches.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-card reveal d1">
+          <div class="svc-n">08</div>
+          <div class="svc-icon">📝</div>
+          <div class="svc-name">On-Page SEO</div>
+          <p class="svc-desc">
+            Title tags, meta descriptions, header optimization, internal linking and local landing
+            pages. Every page on your site tuned to rank for local terms.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-card reveal d2">
+          <div class="svc-n">09</div>
+          <div class="svc-icon">🔎</div>
+          <div class="svc-name">GMB Audit & Fixes</div>
+          <p class="svc-desc">
+            Comprehensive audit of your existing Google Business Profile. Identify why you're not
+            ranking and fix all issues — spam fighting, category fixes, profile health.
+          </p>
+          <div class="svc-arrow">→</div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="sec-label reveal">What I Offer</div>
-  <h2 class="sec-title reveal d1">Services That<br><em>Drive Rankings</em></h2>
-  <p class="services-intro reveal d2">Complete local SEO solutions for businesses in Lahore and worldwide — from Google Maps domination to full technical SEO.</p>
-  <div class="svc-grid">
-    <div class="svc-card reveal"><div class="svc-n">01</div><div class="svc-icon">📍</div><div class="svc-name">Local SEO Services</div><p class="svc-desc">Full-stack local SEO strategy to dominate your city's search results. Geo-targeted content, local link building and citation management for Lahore businesses.</p><div class="svc-arrow">→</div></div>
-    <div class="svc-card reveal d1"><div class="svc-n">02</div><div class="svc-icon">🗺️</div><div class="svc-name">Google Business Profile</div><p class="svc-desc">Complete GMB setup, optimization and ongoing management. Posts, Q&A, photo optimization and category selection that gets you into the Local 3-Pack.</p><div class="svc-arrow">→</div></div>
-    <div class="svc-card reveal d2"><div class="svc-n">03</div><div class="svc-icon">🏆</div><div class="svc-name">GMB Ranking Services</div><p class="svc-desc">Proven strategies to rank your Google Business Profile higher on Maps. Geo-grid tracking, proximity signals, and authority-building for sustained visibility.</p><div class="svc-arrow">→</div></div>
-    <div class="svc-card reveal d1"><div class="svc-n">04</div><div class="svc-icon">🔗</div><div class="svc-name">Citation Building</div><p class="svc-desc">NAP-consistent listings across 50+ high-authority local directories. Yext, Yelp, Foursquare and Pakistan-specific sources that build local trust signals.</p><div class="svc-arrow">→</div></div>
-    <div class="svc-card reveal d2"><div class="svc-n">05</div><div class="svc-icon">⚙️</div><div class="svc-name">Technical SEO</div><p class="svc-desc">Site speed, Core Web Vitals, schema markup, crawlability fixes and mobile optimization. A technically sound website that Google loves to rank.</p><div class="svc-arrow">→</div></div>
-    <div class="svc-card reveal d3"><div class="svc-n">06</div><div class="svc-icon">⭐</div><div class="svc-name">Review Management</div><p class="svc-desc">Automated review generation campaigns, response templates and reputation monitoring. More 5-star reviews that convert searchers into customers.</p><div class="svc-arrow">→</div></div>
-    <div class="svc-card reveal"><div class="svc-n">07</div><div class="svc-icon">🔍</div><div class="svc-name">Local Keyword Research</div><p class="svc-desc">Hyper-local keyword mapping for Lahore and surrounding areas. Find the gaps your competitors miss and dominate low-competition, high-intent searches.</p><div class="svc-arrow">→</div></div>
-    <div class="svc-card reveal d1"><div class="svc-n">08</div><div class="svc-icon">📝</div><div class="svc-name">On-Page SEO</div><p class="svc-desc">Title tags, meta descriptions, header optimization, internal linking and local landing pages. Every page on your site tuned to rank for local terms.</p><div class="svc-arrow">→</div></div>
-    <div class="svc-card reveal d2"><div class="svc-n">09</div><div class="svc-icon">🔎</div><div class="svc-name">GMB Audit & Fixes</div><p class="svc-desc">Comprehensive audit of your existing Google Business Profile. Identify why you're not ranking and fix all issues — spam fighting, category fixes, profile health.</p><div class="svc-arrow">→</div></div>
-  </div>
-</section>
+    <!-- CASE STUDIES -->
+    <section id="cases">
+      <div class="cases-hdr">
+        <div>
+          <div class="sec-label reveal">Proven Results</div>
+          <h2 class="sec-title reveal d1">Real Clients.<br /><em>Real Rankings.</em></h2>
+        </div>
+        <p class="cases-sub reveal d2">
+          Every case represents a real engagement with measurable outcomes in local search.
+        </p>
+      </div>
 
-<!-- CASE STUDIES -->
-<section id="cases">
-  <div class="cases-hdr">
-    <div>
-      <div class="sec-label reveal">Proven Results</div>
-      <h2 class="sec-title reveal d1">Real Clients.<br><em>Real Rankings.</em></h2>
-    </div>
-    <p class="cases-sub reveal d2">Every case represents a real engagement with measurable outcomes in local search.</p>
-  </div>
+      <div
+        class="case-row reveal"
+        onclick="toggleCase(this)"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+        aria-label="Toggle details for Medical Clinic, Lahore case study"
+      >
+        <div class="case-n">01</div>
+        <div>
+          <div class="case-client">Medical Clinic, Lahore</div>
+          <div class="case-loc">📍 Gulberg, Lahore · PK</div>
+        </div>
+        <div class="tags">
+          <span class="tag">GMB Optimization</span><span class="tag">Citation Building</span
+          ><span class="tag">Local SEO</span>
+        </div>
+        <div>
+          <div class="case-result-num">+312%</div>
+          <div class="case-result-lbl">Profile Views</div>
+        </div>
+        <span class="case-btn" aria-hidden="true">+</span>
+        <div class="case-details">
+          <div class="case-dg">
+            <div class="db">
+              <strong>Challenge</strong>
+              <p>
+                Unclaimed GMB profile with zero reviews. Competitors dominated Maps for "skin
+                specialist Lahore" despite lower quality services.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Strategy</strong>
+              <p>
+                Claimed and fully optimized GMB, built 12 Lahore-specific citations, launched a
+                review generation campaign, and created localized landing pages.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Results — 90 days</strong>
+              <p>
+                Ranked in Local 3-Pack for 6 keywords. Profile views +312%, direction requests
+                +180%, phone clicks +240%. From 0 to 47 Google reviews.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="case-row reveal" onclick="toggleCase(this)">
-    <div class="case-n">01</div>
-    <div><div class="case-client">Medical Clinic, Lahore</div><div class="case-loc">📍 Gulberg, Lahore · PK</div></div>
-    <div class="tags"><span class="tag">GMB Optimization</span><span class="tag">Citation Building</span><span class="tag">Local SEO</span></div>
-    <div><div class="case-result-num">+312%</div><div class="case-result-lbl">Profile Views</div></div>
-    <button class="case-btn">+</button>
-    <div class="case-details"><div class="case-dg">
-      <div class="db"><strong>Challenge</strong><p>Unclaimed GMB profile with zero reviews. Competitors dominated Maps for "skin specialist Lahore" despite lower quality services.</p></div>
-      <div class="db"><strong>Strategy</strong><p>Claimed and fully optimized GMB, built 12 Lahore-specific citations, launched a review generation campaign, and created localized landing pages.</p></div>
-      <div class="db"><strong>Results — 90 days</strong><p>Ranked in Local 3-Pack for 6 keywords. Profile views +312%, direction requests +180%, phone clicks +240%. From 0 to 47 Google reviews.</p></div>
-    </div></div>
-  </div>
+      <div
+        class="case-row reveal d1"
+        onclick="toggleCase(this)"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+        aria-label="Toggle details for Restaurant Chain case study"
+      >
+        <div class="case-n">02</div>
+        <div>
+          <div class="case-client">Restaurant Chain</div>
+          <div class="case-loc">📍 DHA Phase 5, Lahore · PK</div>
+        </div>
+        <div class="tags">
+          <span class="tag">Google Maps SEO</span><span class="tag">Review Management</span
+          ><span class="tag">On-Page SEO</span>
+        </div>
+        <div>
+          <div class="case-result-num">#1</div>
+          <div class="case-result-lbl">Google Maps Rank</div>
+        </div>
+        <span class="case-btn" aria-hidden="true">+</span>
+        <div class="case-details">
+          <div class="case-dg">
+            <div class="db">
+              <strong>Challenge</strong>
+              <p>
+                3 branches ranking page 3 for "restaurants near me" in DHA. Poor review management
+                and duplicate GMB listings hurting visibility.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Strategy</strong>
+              <p>
+                Consolidated duplicate listings, built a review response system, optimized each
+                branch GMB with unique photos, menus, and geo-targeted posts.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Results — 60 days</strong>
+              <p>
+                #1 Maps ranking for "restaurants DHA Lahore". Monthly profile searches grew from
+                1,200 to 8,400. Footfall increased ~35% over 3 months.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="case-row reveal d1" onclick="toggleCase(this)">
-    <div class="case-n">02</div>
-    <div><div class="case-client">Restaurant Chain</div><div class="case-loc">📍 DHA Phase 5, Lahore · PK</div></div>
-    <div class="tags"><span class="tag">Google Maps SEO</span><span class="tag">Review Management</span><span class="tag">On-Page SEO</span></div>
-    <div><div class="case-result-num">#1</div><div class="case-result-lbl">Google Maps Rank</div></div>
-    <button class="case-btn">+</button>
-    <div class="case-details"><div class="case-dg">
-      <div class="db"><strong>Challenge</strong><p>3 branches ranking page 3 for "restaurants near me" in DHA. Poor review management and duplicate GMB listings hurting visibility.</p></div>
-      <div class="db"><strong>Strategy</strong><p>Consolidated duplicate listings, built a review response system, optimized each branch GMB with unique photos, menus, and geo-targeted posts.</p></div>
-      <div class="db"><strong>Results — 60 days</strong><p>#1 Maps ranking for "restaurants DHA Lahore". Monthly profile searches grew from 1,200 to 8,400. Footfall increased ~35% over 3 months.</p></div>
-    </div></div>
-  </div>
+      <div
+        class="case-row reveal d2"
+        onclick="toggleCase(this)"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+        aria-label="Toggle details for Plumbing Services case study"
+      >
+        <div class="case-n">03</div>
+        <div>
+          <div class="case-client">Plumbing Services</div>
+          <div class="case-loc">📍 Houston, Texas · USA</div>
+        </div>
+        <div class="tags">
+          <span class="tag">Local SEO USA</span><span class="tag">Technical SEO</span
+          ><span class="tag">Keyword Research</span>
+        </div>
+        <div>
+          <div class="case-result-num">+420%</div>
+          <div class="case-result-lbl">Organic Leads</div>
+        </div>
+        <span class="case-btn" aria-hidden="true">+</span>
+        <div class="case-details">
+          <div class="case-dg">
+            <div class="db">
+              <strong>Challenge</strong>
+              <p>
+                Family-owned plumbing business getting no calls from Google. Site had 8.2s load
+                time, no schema, and poor mobile UX.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Strategy</strong>
+              <p>
+                Full technical audit: reduced LCP to 1.9s, implemented LocalBusiness schema, created
+                12 hyper-local service pages targeting Houston suburbs.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Results — 120 days</strong>
+              <p>
+                Organic leads +420%. Ranked for 28 local keywords including "emergency plumber
+                Houston". Reduced paid ad spend by 60%.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="case-row reveal d2" onclick="toggleCase(this)">
-    <div class="case-n">03</div>
-    <div><div class="case-client">Plumbing Services</div><div class="case-loc">📍 Houston, Texas · USA</div></div>
-    <div class="tags"><span class="tag">Local SEO USA</span><span class="tag">Technical SEO</span><span class="tag">Keyword Research</span></div>
-    <div><div class="case-result-num">+420%</div><div class="case-result-lbl">Organic Leads</div></div>
-    <button class="case-btn">+</button>
-    <div class="case-details"><div class="case-dg">
-      <div class="db"><strong>Challenge</strong><p>Family-owned plumbing business getting no calls from Google. Site had 8.2s load time, no schema, and poor mobile UX.</p></div>
-      <div class="db"><strong>Strategy</strong><p>Full technical audit: reduced LCP to 1.9s, implemented LocalBusiness schema, created 12 hyper-local service pages targeting Houston suburbs.</p></div>
-      <div class="db"><strong>Results — 120 days</strong><p>Organic leads +420%. Ranked for 28 local keywords including "emergency plumber Houston". Reduced paid ad spend by 60%.</p></div>
-    </div></div>
-  </div>
+      <div
+        class="case-row reveal d1"
+        onclick="toggleCase(this)"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+        aria-label="Toggle details for Real Estate Agency case study"
+      >
+        <div class="case-n">04</div>
+        <div>
+          <div class="case-client">Real Estate Agency</div>
+          <div class="case-loc">📍 Birmingham · UK</div>
+        </div>
+        <div class="tags">
+          <span class="tag">GMB Audit</span><span class="tag">Local SEO UK</span
+          ><span class="tag">Content SEO</span>
+        </div>
+        <div>
+          <div class="case-result-num">+290%</div>
+          <div class="case-result-lbl">Enquiries</div>
+        </div>
+        <span class="case-btn" aria-hidden="true">+</span>
+        <div class="case-details">
+          <div class="case-dg">
+            <div class="db">
+              <strong>Challenge</strong>
+              <p>
+                Invisible on Google Maps in Birmingham. Suspended listing, NAP inconsistencies and
+                zero local content were the main problems.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Strategy</strong>
+              <p>
+                Resolved GMB suspension, fixed NAP across 30+ UK directories, created neighbourhood
+                landing pages and a local blog strategy.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Results — 90 days</strong>
+              <p>
+                Suspension lifted in 2 weeks. Enquiries via Google +290%. Ranked for 15
+                neighbourhood keywords like "estate agents Erdington".
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="case-row reveal d1" onclick="toggleCase(this)">
-    <div class="case-n">04</div>
-    <div><div class="case-client">Real Estate Agency</div><div class="case-loc">📍 Birmingham · UK</div></div>
-    <div class="tags"><span class="tag">GMB Audit</span><span class="tag">Local SEO UK</span><span class="tag">Content SEO</span></div>
-    <div><div class="case-result-num">+290%</div><div class="case-result-lbl">Enquiries</div></div>
-    <button class="case-btn">+</button>
-    <div class="case-details"><div class="case-dg">
-      <div class="db"><strong>Challenge</strong><p>Invisible on Google Maps in Birmingham. Suspended listing, NAP inconsistencies and zero local content were the main problems.</p></div>
-      <div class="db"><strong>Strategy</strong><p>Resolved GMB suspension, fixed NAP across 30+ UK directories, created neighbourhood landing pages and a local blog strategy.</p></div>
-      <div class="db"><strong>Results — 90 days</strong><p>Suspension lifted in 2 weeks. Enquiries via Google +290%. Ranked for 15 neighbourhood keywords like "estate agents Erdington".</p></div>
-    </div></div>
-  </div>
+      <div
+        class="case-row reveal d2"
+        onclick="toggleCase(this)"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+        aria-label="Toggle details for Dental Practice case study"
+      >
+        <div class="case-n">05</div>
+        <div>
+          <div class="case-client">Dental Practice</div>
+          <div class="case-loc">📍 Dubai Marina · UAE</div>
+        </div>
+        <div class="tags">
+          <span class="tag">GMB Optimization</span><span class="tag">Reviews</span
+          ><span class="tag">Local SEO UAE</span>
+        </div>
+        <div>
+          <div class="case-result-num">3-Pack</div>
+          <div class="case-result-lbl">Google Maps</div>
+        </div>
+        <span class="case-btn" aria-hidden="true">+</span>
+        <div class="case-details">
+          <div class="case-dg">
+            <div class="db">
+              <strong>Challenge</strong>
+              <p>
+                Low review count (12 reviews, 3.8★) and an incomplete profile made it hard to
+                compete against large dental chains on Maps.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Strategy</strong>
+              <p>
+                Revamped GMB, launched patient review outreach, targeted multilingual keywords
+                (English + Arabic) for the Dubai market.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Results — 75 days</strong>
+              <p>
+                Entered Maps 3-Pack for "dentist Dubai Marina". Reviews grew to 87 at 4.8★. New
+                patient bookings from Maps up 155% MoM.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="case-row reveal d2" onclick="toggleCase(this)">
-    <div class="case-n">05</div>
-    <div><div class="case-client">Dental Practice</div><div class="case-loc">📍 Dubai Marina · UAE</div></div>
-    <div class="tags"><span class="tag">GMB Optimization</span><span class="tag">Reviews</span><span class="tag">Local SEO UAE</span></div>
-    <div><div class="case-result-num">3-Pack</div><div class="case-result-lbl">Google Maps</div></div>
-    <button class="case-btn">+</button>
-    <div class="case-details"><div class="case-dg">
-      <div class="db"><strong>Challenge</strong><p>Low review count (12 reviews, 3.8★) and an incomplete profile made it hard to compete against large dental chains on Maps.</p></div>
-      <div class="db"><strong>Strategy</strong><p>Revamped GMB, launched patient review outreach, targeted multilingual keywords (English + Arabic) for the Dubai market.</p></div>
-      <div class="db"><strong>Results — 75 days</strong><p>Entered Maps 3-Pack for "dentist Dubai Marina". Reviews grew to 87 at 4.8★. New patient bookings from Maps up 155% MoM.</p></div>
-    </div></div>
-  </div>
+      <div
+        class="case-row reveal d3"
+        onclick="toggleCase(this)"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+        aria-label="Toggle details for Law Firm case study"
+      >
+        <div class="case-n">06</div>
+        <div>
+          <div class="case-client">Law Firm</div>
+          <div class="case-loc">📍 Model Town, Lahore · PK</div>
+        </div>
+        <div class="tags">
+          <span class="tag">On-Page SEO</span><span class="tag">Local Keywords</span
+          ><span class="tag">Website SEO</span>
+        </div>
+        <div>
+          <div class="case-result-num">+550%</div>
+          <div class="case-result-lbl">Organic Traffic</div>
+        </div>
+        <span class="case-btn" aria-hidden="true">+</span>
+        <div class="case-details">
+          <div class="case-dg">
+            <div class="db">
+              <strong>Challenge</strong>
+              <p>
+                Beautiful website but zero Google visibility. No keyword strategy, thin content, no
+                local schema, missing GMB — relied entirely on referrals.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Strategy</strong>
+              <p>
+                Built a keyword map of 40+ local legal terms, rewrote all service pages, added
+                Attorney schema, set up and optimized GMB, created a legal blog.
+              </p>
+            </div>
+            <div class="db">
+              <strong>Results — 6 months</strong>
+              <p>
+                Organic traffic +550%. Page 1 for "lawyer Lahore", "family court Lahore" and
+                "property lawyer Model Town". Inquiries tripled.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="case-row reveal d3" onclick="toggleCase(this)">
-    <div class="case-n">06</div>
-    <div><div class="case-client">Law Firm</div><div class="case-loc">📍 Model Town, Lahore · PK</div></div>
-    <div class="tags"><span class="tag">On-Page SEO</span><span class="tag">Local Keywords</span><span class="tag">Website SEO</span></div>
-    <div><div class="case-result-num">+550%</div><div class="case-result-lbl">Organic Traffic</div></div>
-    <button class="case-btn">+</button>
-    <div class="case-details"><div class="case-dg">
-      <div class="db"><strong>Challenge</strong><p>Beautiful website but zero Google visibility. No keyword strategy, thin content, no local schema, missing GMB — relied entirely on referrals.</p></div>
-      <div class="db"><strong>Strategy</strong><p>Built a keyword map of 40+ local legal terms, rewrote all service pages, added Attorney schema, set up and optimized GMB, created a legal blog.</p></div>
-      <div class="db"><strong>Results — 6 months</strong><p>Organic traffic +550%. Page 1 for "lawyer Lahore", "family court Lahore" and "property lawyer Model Town". Inquiries tripled.</p></div>
-    </div></div>
-  </div>
-</section>
+    <!-- PROCESS -->
+    <section id="process">
+      <div class="sec-label reveal">How I Work</div>
+      <h2 class="sec-title reveal d1">The <em>Roadmap</em><br />to Ranking</h2>
+      <div class="proc-wrap">
+        <div class="proc-step reveal">
+          <div class="step-node"><div class="step-circle">01</div></div>
+          <div>
+            <div class="step-title">Free Audit & Discovery Call</div>
+            <p class="step-desc">
+              A comprehensive audit of your GMB health, citation consistency, competitor landscape
+              and technical site issues. You'll see exactly what's holding you back.
+            </p>
+            <span class="step-dur">→ Day 1</span>
+          </div>
+        </div>
+        <div class="proc-step reveal d1">
+          <div class="step-node"><div class="step-circle">02</div></div>
+          <div>
+            <div class="step-title">Custom SEO Strategy</div>
+            <p class="step-desc">
+              A tailored local SEO roadmap targeting your specific city, industry and competitors —
+              keyword mapping, citation gaps, GMB optimizations, and content opportunities.
+            </p>
+            <span class="step-dur">→ Days 2–5</span>
+          </div>
+        </div>
+        <div class="proc-step reveal d2">
+          <div class="step-node"><div class="step-circle">03</div></div>
+          <div>
+            <div class="step-title">On-Page & Technical Fixes</div>
+            <p class="step-desc">
+              Title tags, meta descriptions, local landing pages, schema markup, page speed and Core
+              Web Vitals — everything Google needs to understand and rank your business.
+            </p>
+            <span class="step-dur">→ Week 1–2</span>
+          </div>
+        </div>
+        <div class="proc-step reveal d1">
+          <div class="step-node"><div class="step-circle">04</div></div>
+          <div>
+            <div class="step-title">GMB & Citation Buildout</div>
+            <p class="step-desc">
+              Full Google Business Profile overhaul and a targeted citation-building campaign. Every
+              signal strengthened to tell Google exactly where you are and who you serve.
+            </p>
+            <span class="step-dur">→ Week 2–4</span>
+          </div>
+        </div>
+        <div class="proc-step reveal d2">
+          <div class="step-node"><div class="step-circle">05</div></div>
+          <div>
+            <div class="step-title">Monthly Reporting & Growth</div>
+            <p class="step-desc">
+              Transparent monthly reports on ranking movements, traffic growth, GMB insights and
+              lead data. Continuous refinement to keep you ahead of competitors long-term.
+            </p>
+            <span class="step-dur">→ Ongoing</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- PROCESS -->
-<section id="process">
-  <div class="sec-label reveal">How I Work</div>
-  <h2 class="sec-title reveal d1">The <em>Roadmap</em><br>to Ranking</h2>
-  <div class="proc-wrap">
-    <div class="proc-step reveal">
-      <div class="step-node"><div class="step-circle">01</div></div>
-      <div><div class="step-title">Free Audit & Discovery Call</div><p class="step-desc">A comprehensive audit of your GMB health, citation consistency, competitor landscape and technical site issues. You'll see exactly what's holding you back.</p><span class="step-dur">→ Day 1</span></div>
-    </div>
-    <div class="proc-step reveal d1">
-      <div class="step-node"><div class="step-circle">02</div></div>
-      <div><div class="step-title">Custom SEO Strategy</div><p class="step-desc">A tailored local SEO roadmap targeting your specific city, industry and competitors — keyword mapping, citation gaps, GMB optimizations, and content opportunities.</p><span class="step-dur">→ Days 2–5</span></div>
-    </div>
-    <div class="proc-step reveal d2">
-      <div class="step-node"><div class="step-circle">03</div></div>
-      <div><div class="step-title">On-Page & Technical Fixes</div><p class="step-desc">Title tags, meta descriptions, local landing pages, schema markup, page speed and Core Web Vitals — everything Google needs to understand and rank your business.</p><span class="step-dur">→ Week 1–2</span></div>
-    </div>
-    <div class="proc-step reveal d1">
-      <div class="step-node"><div class="step-circle">04</div></div>
-      <div><div class="step-title">GMB & Citation Buildout</div><p class="step-desc">Full Google Business Profile overhaul and a targeted citation-building campaign. Every signal strengthened to tell Google exactly where you are and who you serve.</p><span class="step-dur">→ Week 2–4</span></div>
-    </div>
-    <div class="proc-step reveal d2">
-      <div class="step-node"><div class="step-circle">05</div></div>
-      <div><div class="step-title">Monthly Reporting & Growth</div><p class="step-desc">Transparent monthly reports on ranking movements, traffic growth, GMB insights and lead data. Continuous refinement to keep you ahead of competitors long-term.</p><span class="step-dur">→ Ongoing</span></div>
-    </div>
-  </div>
-</section>
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="sec-label reveal">Client Voices</div>
+      <h2 class="sec-title reveal d1">What Clients<br /><em>Say About Me</em></h2>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">
+            "Zohaib transformed our GMB profile and within 6 weeks we were ranking in the top 3 on
+            Google Maps for our main keywords in Lahore. The phone hasn't stopped ringing since."
+          </p>
+          <div class="testi-author">
+            <div class="author-av">AK</div>
+            <div>
+              <div class="author-name">Dr. Asad Khan</div>
+              <div class="author-meta">Medical Clinic Owner · Gulberg, Lahore</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal d1">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">
+            "We hired Zohaib for our plumbing business in Houston and the results blew us away.
+            Organic leads went up more than 4x in 4 months. He communicates everything clearly."
+          </p>
+          <div class="testi-author">
+            <div class="author-av">MR</div>
+            <div>
+              <div class="author-name">Mike Rodriguez</div>
+              <div class="author-meta">Plumbing Services Owner · Houston, USA</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal d2">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">
+            "Zohaib fixed our duplicate listings, got us to #1 in DHA Lahore, and footfall has
+            noticeably increased. Our restaurant group couldn't be happier. Worth every rupee."
+          </p>
+          <div class="testi-author">
+            <div class="author-av">SA</div>
+            <div>
+              <div class="author-name">Sara Amir</div>
+              <div class="author-meta">Restaurant Group Owner · DHA, Lahore</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal d3">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">
+            "Zohaib resolved our GMB suspension in under two weeks — something we'd struggled with
+            for months. Rebuilt our entire local SEO in Birmingham. Now ranking for 15+ keywords."
+          </p>
+          <div class="testi-author">
+            <div class="author-av">JT</div>
+            <div>
+              <div class="author-name">James Thompson</div>
+              <div class="author-meta">Real Estate Director · Birmingham, UK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="sec-label reveal">Client Voices</div>
-  <h2 class="sec-title reveal d1">What Clients<br><em>Say About Me</em></h2>
-  <div class="testi-grid">
-    <div class="testi-card reveal">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Zohaib transformed our GMB profile and within 6 weeks we were ranking in the top 3 on Google Maps for our main keywords in Lahore. The phone hasn't stopped ringing since."</p>
-      <div class="testi-author"><div class="author-av">AK</div><div><div class="author-name">Dr. Asad Khan</div><div class="author-meta">Medical Clinic Owner · Gulberg, Lahore</div></div></div>
-    </div>
-    <div class="testi-card reveal d1">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"We hired Zohaib for our plumbing business in Houston and the results blew us away. Organic leads went up more than 4x in 4 months. He communicates everything clearly."</p>
-      <div class="testi-author"><div class="author-av">MR</div><div><div class="author-name">Mike Rodriguez</div><div class="author-meta">Plumbing Services Owner · Houston, USA</div></div></div>
-    </div>
-    <div class="testi-card reveal d2">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Zohaib fixed our duplicate listings, got us to #1 in DHA Lahore, and footfall has noticeably increased. Our restaurant group couldn't be happier. Worth every rupee."</p>
-      <div class="testi-author"><div class="author-av">SA</div><div><div class="author-name">Sara Amir</div><div class="author-meta">Restaurant Group Owner · DHA, Lahore</div></div></div>
-    </div>
-    <div class="testi-card reveal d3">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Zohaib resolved our GMB suspension in under two weeks — something we'd struggled with for months. Rebuilt our entire local SEO in Birmingham. Now ranking for 15+ keywords."</p>
-      <div class="testi-author"><div class="author-av">JT</div><div><div class="author-name">James Thompson</div><div class="author-meta">Real Estate Director · Birmingham, UK</div></div></div>
-    </div>
-  </div>
-</section>
+    <!-- CTA -->
+    <section id="cta">
+      <div class="sec-label reveal">Let's Work Together</div>
+      <div class="cta-title reveal d1">Ready to<br /><em>Rank #1?</em></div>
+      <p class="cta-sub reveal d2">
+        Book a free SEO audit and discover exactly what's holding your business back from the top of
+        Google Maps and local search.
+      </p>
+      <div class="cta-btns reveal d3">
+        <a
+          href="https://web.whatsapp.com/send?phone=923077551304"
+          target="_top"
+          class="btn-gold-lg js-whatsapp"
+          >📲 WhatsApp for Free Audit</a
+        >
+        <a href="tel:+923077551304" class="btn-outline-gold">📞 Call Now</a>
+      </div>
+      <div class="cta-info reveal d4">
+        <div class="cta-info-item">📞 0307 7551304</div>
+        <div class="cta-info-item">📍 Lahore, Pakistan</div>
+        <div class="cta-info-item">🌍 PK · USA · UK · UAE · AU</div>
+      </div>
+    </section>
 
-<!-- CTA -->
-<section id="cta">
-  <div class="sec-label reveal">Let's Work Together</div>
-  <div class="cta-title reveal d1">Ready to<br><em>Rank #1?</em></div>
-  <p class="cta-sub reveal d2">Book a free SEO audit and discover exactly what's holding your business back from the top of Google Maps and local search.</p>
-  <div class="cta-btns reveal d3">
-    <a href="https://web.whatsapp.com/send?phone=923077551304" target="_top" class="btn-gold-lg js-whatsapp">📲 WhatsApp for Free Audit</a>
-    <a href="tel:+923077551304" class="btn-outline-gold">📞 Call Now</a>
-  </div>
-  <div class="cta-info reveal d4">
-    <div class="cta-info-item">📞 0307 7551304</div>
-    <div class="cta-info-item">📍 Lahore, Pakistan</div>
-    <div class="cta-info-item">🌍 PK · USA · UK · UAE · AU</div>
-  </div>
-</section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">SZA<span>.</span> — Syed Zohaib Ali</div>
+      <div>© 2025 Syed Zohaib Ali. All rights reserved.</div>
+      <div>
+        <a href="https://web.whatsapp.com/send?phone=923077551304" target="_top" class="js-whatsapp"
+          >WhatsApp</a
+        >
+        ·
+        <a
+          href="https://www.linkedin.com/in/syed-zohaib-ali-52072a281/"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+      </div>
+    </footer>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">SZA<span>.</span> — Syed Zohaib Ali</div>
-  <div>© 2025 Syed Zohaib Ali. All rights reserved.</div>
-  <div><a href="https://web.whatsapp.com/send?phone=923077551304" target="_top" class="js-whatsapp">WhatsApp</a> · <a href="https://www.linkedin.com/in/syed-zohaib-ali-52072a281/" target="_blank" rel="noopener">LinkedIn</a></div>
-</footer>
+    <script>
+      /* STARS */
+      (function () {
+        const s = document.getElementById("stars");
+        const n = window.innerWidth < 600 ? 60 : 120;
+        for (let i = 0; i < n; i++) {
+          const el = document.createElement("div");
+          el.className = "star";
+          const sz = Math.random() * 2 + 0.4;
+          el.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random() * 100}%;left:${Math.random() * 100}%;--dur:${2 + Math.random() * 5}s;--delay:${Math.random() * 5}s;--lo:${0.04 + Math.random() * 0.08};--hi:${0.25 + Math.random() * 0.45}`;
+          s.appendChild(el);
+        }
+      })();
 
-<script>
-/* STARS */
-(function(){
-  const s=document.getElementById('stars');
-  const n=window.innerWidth<600?60:120;
-  for(let i=0;i<n;i++){
-    const el=document.createElement('div');
-    el.className='star';
-    const sz=Math.random()*2+.4;
-    el.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--dur:${2+Math.random()*5}s;--delay:${Math.random()*5}s;--lo:${.04+Math.random()*.08};--hi:${.25+Math.random()*.45}`;
-    s.appendChild(el);
-  }
-})();
+      /* CURSOR — desktop only */
+      if (window.matchMedia("(pointer:fine)").matches) {
+        const cur = document.getElementById("cur"),
+          ring = document.getElementById("cur-ring");
+        let mx = 0,
+          my = 0,
+          rx = 0,
+          ry = 0;
+        document.addEventListener("mousemove", (e) => {
+          mx = e.clientX;
+          my = e.clientY;
+          cur.style.left = mx + "px";
+          cur.style.top = my + "px";
+        });
+        (function loop() {
+          rx += (mx - rx) * 0.12;
+          ry += (my - ry) * 0.12;
+          ring.style.left = rx + "px";
+          ring.style.top = ry + "px";
+          requestAnimationFrame(loop);
+        })();
+        document.querySelectorAll("a,button,.svc-card,.case-row").forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            cur.style.width = "18px";
+            cur.style.height = "18px";
+            ring.style.width = "54px";
+            ring.style.height = "54px";
+          });
+          el.addEventListener("mouseleave", () => {
+            cur.style.width = "10px";
+            cur.style.height = "10px";
+            ring.style.width = "36px";
+            ring.style.height = "36px";
+          });
+        });
+      }
 
-/* CURSOR — desktop only */
-if(window.matchMedia('(pointer:fine)').matches){
-  const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-  (function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-  document.querySelectorAll('a,button,.svc-card,.case-row').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='54px';ring.style.height='54px'});
-    el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px'});
-  });
-}
+      /* NAV */
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 60), {
+        passive: true,
+      });
 
-/* NAV */
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+      /* HAMBURGER */
+      const ham = document.getElementById("ham"),
+        drawer = document.getElementById("drawer");
+      ham.addEventListener("click", () => {
+        const open = ham.classList.toggle("open");
+        drawer.classList.toggle("open", open);
+        document.body.style.overflow = open ? "hidden" : "";
+      });
+      function closeDrawer() {
+        ham.classList.remove("open");
+        drawer.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      /* Close drawer on outside tap */
+      drawer.addEventListener("click", (e) => {
+        if (e.target === drawer) closeDrawer();
+      });
 
-/* HAMBURGER */
-const ham=document.getElementById('ham'),drawer=document.getElementById('drawer');
-ham.addEventListener('click',()=>{
-  const open=ham.classList.toggle('open');
-  drawer.classList.toggle('open',open);
-  document.body.style.overflow=open?'hidden':'';
-});
-function closeDrawer(){
-  ham.classList.remove('open');
-  drawer.classList.remove('open');
-  document.body.style.overflow='';
-}
-/* Close drawer on outside tap */
-drawer.addEventListener('click',e=>{if(e.target===drawer)closeDrawer()});
+      /* REVEAL */
+      const ro = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          }),
+        { threshold: 0.08, rootMargin: "0px 0px -30px 0px" },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => ro.observe(el));
 
-/* REVEAL */
-const ro=new IntersectionObserver(entries=>entries.forEach(e=>{
-  if(e.isIntersecting)e.target.classList.add('visible');
-}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+      /* COUNT UP */
+      function countUp(el, target) {
+        let v = 0;
+        const step = target / (1400 / 16);
+        const t = setInterval(() => {
+          v += step;
+          if (v >= target) {
+            el.textContent = target;
+            clearInterval(t);
+          } else el.textContent = Math.floor(v);
+        }, 16);
+      }
+      const co = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              countUp(e.target, +e.target.dataset.target);
+              co.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.5 },
+      );
+      document.querySelectorAll(".count-up").forEach((el) => co.observe(el));
 
-/* COUNT UP */
-function countUp(el,target){
-  let v=0;const step=target/(1400/16);
-  const t=setInterval(()=>{v+=step;if(v>=target){el.textContent=target;clearInterval(t)}else el.textContent=Math.floor(v)},16);
-}
-const co=new IntersectionObserver(entries=>entries.forEach(e=>{
-  if(e.isIntersecting){countUp(e.target,+e.target.dataset.target);co.unobserve(e.target);}
-}),{threshold:.5});
-document.querySelectorAll('.count-up').forEach(el=>co.observe(el));
+      /* CASE TOGGLE */
+      function toggleCase(item) {
+        const d = item.querySelector(".case-details");
+        const b = item.querySelector(".case-btn");
+        if (!d) return;
+        const isOpen = d.classList.contains("open");
+        document.querySelectorAll(".case-details.open").forEach((x) => {
+          x.classList.remove("open");
+          const row = x.closest(".case-row");
+          if (row) row.setAttribute("aria-expanded", "false");
+          const btn = row ? row.querySelector(".case-btn") : null;
+          if (btn) btn.textContent = "+";
+        });
+        if (!isOpen) {
+          d.classList.add("open");
+          item.setAttribute("aria-expanded", "true");
+          if (b) b.textContent = "−";
+        } else {
+          item.setAttribute("aria-expanded", "false");
+        }
+      }
 
-/* CASE TOGGLE */
-function toggleCase(item){
-  const d=item.querySelector('.case-details');
-  const b=item.querySelector('.case-btn');
-  if(!d)return;
-  const isOpen=d.classList.contains('open');
-  document.querySelectorAll('.case-details.open').forEach(x=>{
-    x.classList.remove('open');
-    const btn=x.closest('.case-row').querySelector('.case-btn');
-    if(btn)btn.textContent='+';
-  });
-  if(!isOpen){d.classList.add('open');if(b)b.textContent='−';}
-}
+      /* KEYBOARD NAVIGATION FOR CASE ROWS */
+      document.querySelectorAll(".case-row").forEach((row) => {
+        row.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleCase(row);
+          }
+        });
+      });
 
-/* PARALLAX — desktop only, passive listener */
-if(window.matchMedia('(min-width:769px)').matches){
-  window.addEventListener('scroll',()=>{
-    const hr=document.querySelector('.hero-right');
-    if(hr)hr.style.transform=`translateY(${scrollY*.1}px)`;
-  },{passive:true});
-}
+      /* PARALLAX — desktop only, passive listener */
+      if (window.matchMedia("(min-width:769px)").matches) {
+        window.addEventListener(
+          "scroll",
+          () => {
+            const hr = document.querySelector(".hero-right");
+            if (hr) hr.style.transform = `translateY(${scrollY * 0.1}px)`;
+          },
+          { passive: true },
+        );
+      }
 
-/* SMOOTH ANCHOR */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
-  });
-});
+      /* SMOOTH ANCHOR */
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const t = document.querySelector(a.getAttribute("href"));
+          if (t) {
+            e.preventDefault();
+            t.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
 
-/* WHATSAPP — direct link only, no wa.me/api.whatsapp redirect */
-document.querySelectorAll('.js-whatsapp').forEach(a=>{
-  a.addEventListener('click',()=>{ window.top.location.href = a.href; });
-});
-
-</script>
-</body>
+      /* WHATSAPP — direct link only, no wa.me/api.whatsapp redirect */
+      document.querySelectorAll(".js-whatsapp").forEach((a) => {
+        a.addEventListener("click", () => {
+          window.top.location.href = a.href;
+        });
+      });
+    </script>
+  </body>
 </html>
