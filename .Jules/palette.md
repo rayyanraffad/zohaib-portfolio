@@ -1,0 +1,5 @@
+## 2025-05-20 - [Accordion and Mobile Drawer Accessibility in Pure HTML Template]
+**Learning:** In projects serving raw HTML from static files (like public/site.html in this TanStack Start repo), standard frontend framework component accessibility defaults are absent. Specifically:
+1. Mobile navigation drawers hidden off-screen via CSS transitions (e.g., `transform: translateX(100%)`) remain in the tab order for keyboard and screen reader users unless `visibility: hidden` is applied.
+2. Clicking complex interactive container blocks (like case study rows) with nested `<button>` tags creates nested interactive controls violations. Converting nested buttons to inert `<span>` elements with `aria-hidden="true"`, and adding `tabindex="0"`, `role="button"`, and keyboard event listeners ('Enter' & 'Space') to the container satisfies both visual design and WCAG accessibility standards.
+**Action:** When working with static HTML/JS integrations, manually manage focus states, keyboard listeners, `aria-expanded`, and element visibility transition bindings to mirror framework-level accessibility benefits.
