@@ -1,11 +1,24 @@
-﻿{
+{
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "zohaib-portfolio",
   "compatibility_date": "2026-06-20",
   "compatibility_flags": ["nodejs_compat"],
   "observability": { "enabled": true },
-  "main": "dist/server/server.js",
+  "main": "dist/server/index.mjs",
   "assets": {
     "directory": "dist/client"
-  }
+  },
+  "build": {
+    "command": "pnpm build"
+  },
+  "no_bundle": true,
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": [
+        "**/*.mjs",
+        "**/*.js"
+      ]
+    }
+  ]
 }
