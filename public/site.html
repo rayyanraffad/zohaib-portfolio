@@ -20,6 +20,13 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* Global focus visibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 @media(pointer:fine){body{cursor:none}}
 img{max-width:100%;display:block}
 
@@ -57,8 +64,8 @@ nav.scrolled{height:58px}
 .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* Mobile nav drawer */
-.nav-drawer{position:fixed;inset:0;background:rgba(8,12,20,.97);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .45s var(--ease)}
-.nav-drawer.open{transform:none}
+.nav-drawer{position:fixed;inset:0;background:rgba(8,12,20,.97);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);visibility:hidden;transition:transform .45s var(--ease),visibility .45s var(--ease)}
+.nav-drawer.open{transform:none;visibility:visible}
 .nav-drawer a{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.06em;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .nav-drawer a:hover,.nav-drawer a:active{color:var(--gold)}
 .nav-drawer .drawer-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#080c14;padding:.7rem 2rem;font-size:1rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:.06em;margin-top:.5rem}
@@ -174,10 +181,11 @@ section{padding:6rem 6rem;position:relative;z-index:1}
 #cases{background:var(--bg2)}
 .cases-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
 .cases-sub{font-size:.82rem;color:var(--text-dim);max-width:240px;line-height:1.65;text-align:right;font-weight:300}
-.case-row{display:grid;grid-template-columns:60px 1fr 1fr 110px 50px;align-items:center;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border2);transition:padding-left .4s var(--ease);position:relative;-webkit-tap-highlight-color:transparent}
+.case-row{display:grid;grid-template-columns:60px 1fr 1fr 110px 50px;align-items:center;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border2);transition:padding-left .4s var(--ease);position:relative;-webkit-tap-highlight-color:transparent;outline:none}
 .case-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--gold-pale));transform:scaleY(0);transition:transform .4s var(--ease)}
-.case-row:hover{padding-left:1rem}
-.case-row:hover::before{transform:scaleY(1)}
+.case-row:hover, .case-row:focus-visible{padding-left:1rem;background:rgba(201,150,58,.02)}
+.case-row:hover::before, .case-row:focus-visible::before{transform:scaleY(1)}
+.case-row:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 .case-n{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:rgba(201,150,58,.12)}
 .case-client{font-weight:500;font-size:.97rem;color:var(--text)}
 .case-loc{font-size:.62rem;color:var(--text-dim);letter-spacing:.09em;text-transform:uppercase;margin-top:.2rem;font-family:'Space Mono',monospace}
@@ -185,8 +193,8 @@ section{padding:6rem 6rem;position:relative;z-index:1}
 .tag{padding:.18rem .55rem;background:rgba(201,150,58,.06);border:1px solid var(--border);font-size:.6rem;letter-spacing:.06em;border-radius:2px;color:var(--text-dim)}
 .case-result-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;background:linear-gradient(135deg,var(--gold),var(--gold-pale));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
 .case-result-lbl{font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.09em;font-family:'Space Mono',monospace;margin-top:.2rem}
-.case-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-dim);transition:background .2s,border-color .2s,color .2s;margin-left:auto;flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.case-btn:hover,.case-btn:active{background:var(--gold);border-color:var(--gold);color:#080c14}
+.case-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:none;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-dim);transition:background .2s,border-color .2s,color .2s;margin-left:auto;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.case-row:hover .case-btn, .case-row:focus-visible .case-btn{background:var(--gold);border-color:var(--gold);color:#080c14}
 .case-details{display:none;grid-column:1/-1;background:rgba(201,150,58,.03);border:1px solid var(--border);padding:1.4rem 1.8rem;margin-top:.4rem}
 .case-details.open{display:block}
 .case-dg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
@@ -516,12 +524,12 @@ html,body{max-width:100%;overflow-x:hidden}
     <p class="cases-sub reveal d2">Every case represents a real engagement with measurable outcomes in local search.</p>
   </div>
 
-  <div class="case-row reveal" onclick="toggleCase(this)">
+  <div class="case-row reveal" onclick="toggleCase(this)" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Medical Clinic case study, Lahore">
     <div class="case-n">01</div>
     <div><div class="case-client">Medical Clinic, Lahore</div><div class="case-loc">📍 Gulberg, Lahore · PK</div></div>
     <div class="tags"><span class="tag">GMB Optimization</span><span class="tag">Citation Building</span><span class="tag">Local SEO</span></div>
     <div><div class="case-result-num">+312%</div><div class="case-result-lbl">Profile Views</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Unclaimed GMB profile with zero reviews. Competitors dominated Maps for "skin specialist Lahore" despite lower quality services.</p></div>
       <div class="db"><strong>Strategy</strong><p>Claimed and fully optimized GMB, built 12 Lahore-specific citations, launched a review generation campaign, and created localized landing pages.</p></div>
@@ -529,12 +537,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d1" onclick="toggleCase(this)">
+  <div class="case-row reveal d1" onclick="toggleCase(this)" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Restaurant Chain case study">
     <div class="case-n">02</div>
     <div><div class="case-client">Restaurant Chain</div><div class="case-loc">📍 DHA Phase 5, Lahore · PK</div></div>
     <div class="tags"><span class="tag">Google Maps SEO</span><span class="tag">Review Management</span><span class="tag">On-Page SEO</span></div>
     <div><div class="case-result-num">#1</div><div class="case-result-lbl">Google Maps Rank</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>3 branches ranking page 3 for "restaurants near me" in DHA. Poor review management and duplicate GMB listings hurting visibility.</p></div>
       <div class="db"><strong>Strategy</strong><p>Consolidated duplicate listings, built a review response system, optimized each branch GMB with unique photos, menus, and geo-targeted posts.</p></div>
@@ -542,12 +550,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d2" onclick="toggleCase(this)">
+  <div class="case-row reveal d2" onclick="toggleCase(this)" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Plumbing Services case study, Houston">
     <div class="case-n">03</div>
     <div><div class="case-client">Plumbing Services</div><div class="case-loc">📍 Houston, Texas · USA</div></div>
     <div class="tags"><span class="tag">Local SEO USA</span><span class="tag">Technical SEO</span><span class="tag">Keyword Research</span></div>
     <div><div class="case-result-num">+420%</div><div class="case-result-lbl">Organic Leads</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Family-owned plumbing business getting no calls from Google. Site had 8.2s load time, no schema, and poor mobile UX.</p></div>
       <div class="db"><strong>Strategy</strong><p>Full technical audit: reduced LCP to 1.9s, implemented LocalBusiness schema, created 12 hyper-local service pages targeting Houston suburbs.</p></div>
@@ -555,12 +563,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d1" onclick="toggleCase(this)">
+  <div class="case-row reveal d1" onclick="toggleCase(this)" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Real Estate Agency case study, Birmingham">
     <div class="case-n">04</div>
     <div><div class="case-client">Real Estate Agency</div><div class="case-loc">📍 Birmingham · UK</div></div>
     <div class="tags"><span class="tag">GMB Audit</span><span class="tag">Local SEO UK</span><span class="tag">Content SEO</span></div>
     <div><div class="case-result-num">+290%</div><div class="case-result-lbl">Enquiries</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Invisible on Google Maps in Birmingham. Suspended listing, NAP inconsistencies and zero local content were the main problems.</p></div>
       <div class="db"><strong>Strategy</strong><p>Resolved GMB suspension, fixed NAP across 30+ UK directories, created neighbourhood landing pages and a local blog strategy.</p></div>
@@ -568,12 +576,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d2" onclick="toggleCase(this)">
+  <div class="case-row reveal d2" onclick="toggleCase(this)" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Dental Practice case study, Dubai">
     <div class="case-n">05</div>
     <div><div class="case-client">Dental Practice</div><div class="case-loc">📍 Dubai Marina · UAE</div></div>
     <div class="tags"><span class="tag">GMB Optimization</span><span class="tag">Reviews</span><span class="tag">Local SEO UAE</span></div>
     <div><div class="case-result-num">3-Pack</div><div class="case-result-lbl">Google Maps</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Low review count (12 reviews, 3.8★) and an incomplete profile made it hard to compete against large dental chains on Maps.</p></div>
       <div class="db"><strong>Strategy</strong><p>Revamped GMB, launched patient review outreach, targeted multilingual keywords (English + Arabic) for the Dubai market.</p></div>
@@ -581,12 +589,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d3" onclick="toggleCase(this)">
+  <div class="case-row reveal d3" onclick="toggleCase(this)" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Law Firm case study, Lahore">
     <div class="case-n">06</div>
     <div><div class="case-client">Law Firm</div><div class="case-loc">📍 Model Town, Lahore · PK</div></div>
     <div class="tags"><span class="tag">On-Page SEO</span><span class="tag">Local Keywords</span><span class="tag">Website SEO</span></div>
     <div><div class="case-result-num">+550%</div><div class="case-result-lbl">Organic Traffic</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Beautiful website but zero Google visibility. No keyword strategy, thin content, no local schema, missing GMB — relied entirely on referrals.</p></div>
       <div class="db"><strong>Strategy</strong><p>Built a keyword map of 40+ local legal terms, rewrote all service pages, added Attorney schema, set up and optimized GMB, created a legal blog.</p></div>
@@ -743,11 +751,29 @@ function toggleCase(item){
   const isOpen=d.classList.contains('open');
   document.querySelectorAll('.case-details.open').forEach(x=>{
     x.classList.remove('open');
-    const btn=x.closest('.case-row').querySelector('.case-btn');
+    const row=x.closest('.case-row');
+    if(row)row.setAttribute('aria-expanded', 'false');
+    const btn=row ? row.querySelector('.case-btn') : null;
     if(btn)btn.textContent='+';
   });
-  if(!isOpen){d.classList.add('open');if(b)b.textContent='−';}
+  if(!isOpen){
+    d.classList.add('open');
+    item.setAttribute('aria-expanded', 'true');
+    if(b)b.textContent='−';
+  } else {
+    item.setAttribute('aria-expanded', 'false');
+  }
 }
+
+/* Keyboard triggers for case-row */
+document.querySelectorAll('.case-row').forEach(row => {
+  row.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleCase(row);
+    }
+  });
+});
 
 /* PARALLAX — desktop only, passive listener */
 if(window.matchMedia('(min-width:769px)').matches){
