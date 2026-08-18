@@ -1,0 +1,3 @@
+## 2026-08-18 - Accordion Keyboard Accessibility and Focus Indicators
+**Learning:** Interactive accordion elements built as custom `div` containers require `role="button"`, `tabindex="0"`, dynamic `aria-expanded` attributes, keyboard listener for Enter/Space, and explicit `:focus-visible` styling to be accessible to screen readers and keyboard users. Any nested `<button>` should be converted to non-interactive `<span>` with `aria-hidden="true"` to prevent invalid nested interactive controls.
+**Action:** Always check interactive custom elements in static HTML templates for keyboard listeners, ARIA state updates, focus outlines, and nested control structure.
