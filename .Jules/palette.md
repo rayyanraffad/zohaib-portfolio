@@ -1,0 +1,3 @@
+## 2025-05-18 - Offscreen Navigation Drawers & Custom Accordions
+**Learning:** Sliding offscreen navigation drawers (`transform: translateX(100%)`) remain in the tab order unless hidden with `visibility: hidden` or `display: none` when closed, causing keyboard focus trapping offscreen. Similarly, custom interactive rows (`div` with `onclick`) need `role="button"`, `tabindex="0"`, keyboard event listeners, and nested `<button>` elements converted to `aria-hidden="true"` spans to prevent nested interactive controls.
+**Action:** Always combine CSS `visibility: hidden`/`pointer-events: none` on closed mobile drawer overlays, and ensure clickable container rows use non-interactive decorative indicators with proper ARIA attributes.
