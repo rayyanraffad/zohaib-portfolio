@@ -1,0 +1,3 @@
+## 2025-08-21 - Case Study Accordions Accessibility
+**Learning:** Interactive expandable container rows implemented as `div` elements with `onclick` handlers require `role="button"`, `tabindex="0"`, dynamic `aria-expanded`, and descriptive `aria-label` attributes alongside Enter/Space keyboard listeners. Any nested interactive elements (e.g. `<button>`) inside the row must be converted to non-interactive elements like `<span>` with `aria-hidden="true"` to prevent invalid nested interactive controls and conflicting focus states.
+**Action:** When making custom list/accordion rows interactive, apply role/tabindex/aria attributes to the outer container, replace inner buttons with decorative `span` elements, and add clear `:focus-visible` styles using theme color tokens.
