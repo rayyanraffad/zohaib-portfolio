@@ -1,0 +1,3 @@
+## 2025-08-22 - Mobile Navigation Drawer Accessibility & Keyboard Navigation
+**Learning:** Off-screen mobile navigation drawers created with `transform: translateX(100%)` remain in the tab order and screen reader reading flow when closed if `visibility` or `display` is not toggled. Using `visibility: hidden` when closed and `visibility: visible` when open alongside CSS transitions removes the links from tab order while preserving smooth slide-in/slide-out animations.
+**Action:** Always ensure off-screen navigation drawers toggle `visibility` and sync `aria-expanded` attributes with keyboard `Escape` key dismissal support.
