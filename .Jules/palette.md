@@ -1,0 +1,3 @@
+## 2026-08-23 - Interactive Row Accordions Accessibility
+**Learning:** Custom interactive rows (`.case-row`) using `div` tags with `onclick` handlers require `role="button"`, `tabindex="0"`, `aria-expanded`, and descriptive `aria-label`s along with `Enter`/`Space` keydown listeners for keyboard accessibility. Nested `<button>` tags within a clickable row container cause nested interactive control accessibility failures and should be converted to `span`s with `aria-hidden="true"`.
+**Action:** Always check interactive custom card/row containers for nested buttons, add proper ARIA attributes, and ensure `:focus-visible` styling mirrors hover states with a clear outline.
