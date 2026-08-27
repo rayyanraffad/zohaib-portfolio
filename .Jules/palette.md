@@ -1,0 +1,3 @@
+## 2026-08-27 - Accessible Accordion Rows with Interactive Containers
+**Learning:** Custom interactive accordion rows implemented with `div[onclick]` can cause nested interactive control errors if they contain inner `<button>` elements. Converting inner buttons to decorative non-interactive elements (`<span aria-hidden="true">`) and placing full ARIA accordion attributes (`role="button"`, `tabindex="0"`, `aria-expanded`, `aria-controls`, `aria-label`) on the container element ensures full accessibility and seamless keyboard navigation.
+**Action:** When making clickable card or row containers accessible, replace any internal `<button>` or `<a>` elements with non-interactive decorative elements and attach keyboard event listeners (`Enter` / `Space`) to the row container.
