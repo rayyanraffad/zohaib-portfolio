@@ -57,8 +57,8 @@ nav.scrolled{height:58px}
 .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* Mobile nav drawer */
-.nav-drawer{position:fixed;inset:0;background:rgba(8,12,20,.97);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .45s var(--ease)}
-.nav-drawer.open{transform:none}
+.nav-drawer{position:fixed;inset:0;background:rgba(8,12,20,.97);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);visibility:hidden;transition:transform .45s var(--ease),visibility .45s var(--ease)}
+.nav-drawer.open{transform:none;visibility:visible}
 .nav-drawer a{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.06em;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .nav-drawer a:hover,.nav-drawer a:active{color:var(--gold)}
 .nav-drawer .drawer-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#080c14;padding:.7rem 2rem;font-size:1rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:.06em;margin-top:.5rem}
@@ -345,7 +345,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <div id="stars"></div>
 
 <!-- Mobile Nav Drawer -->
-<div class="nav-drawer" id="drawer">
+<div class="nav-drawer" id="drawer" aria-hidden="true">
   <a href="#about" onclick="closeDrawer()">About</a>
   <a href="#services" onclick="closeDrawer()">Services</a>
   <a href="#cases" onclick="closeDrawer()">Results</a>
@@ -365,7 +365,7 @@ html,body{max-width:100%;overflow-x:hidden}
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="https://web.whatsapp.com/send?phone=923077551304" target="_top" class="nav-cta js-whatsapp">Book Free Audit</a></li>
   </ul>
-  <button class="ham" id="ham" aria-label="Menu">
+  <button class="ham" id="ham" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -709,11 +709,15 @@ const ham=document.getElementById('ham'),drawer=document.getElementById('drawer'
 ham.addEventListener('click',()=>{
   const open=ham.classList.toggle('open');
   drawer.classList.toggle('open',open);
+  ham.setAttribute('aria-expanded',open);
+  drawer.setAttribute('aria-hidden',!open);
   document.body.style.overflow=open?'hidden':'';
 });
 function closeDrawer(){
   ham.classList.remove('open');
   drawer.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');
+  drawer.setAttribute('aria-hidden','true');
   document.body.style.overflow='';
 }
 /* Close drawer on outside tap */
