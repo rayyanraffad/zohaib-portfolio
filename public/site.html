@@ -178,6 +178,7 @@ section{padding:6rem 6rem;position:relative;z-index:1}
 .case-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--gold-pale));transform:scaleY(0);transition:transform .4s var(--ease)}
 .case-row:hover{padding-left:1rem}
 .case-row:hover::before{transform:scaleY(1)}
+.case-row:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .case-n{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:rgba(201,150,58,.12)}
 .case-client{font-weight:500;font-size:.97rem;color:var(--text)}
 .case-loc{font-size:.62rem;color:var(--text-dim);letter-spacing:.09em;text-transform:uppercase;margin-top:.2rem;font-family:'Space Mono',monospace}
@@ -345,7 +346,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <div id="stars"></div>
 
 <!-- Mobile Nav Drawer -->
-<div class="nav-drawer" id="drawer">
+<div class="nav-drawer" id="drawer" role="dialog" aria-label="Navigation Menu">
   <a href="#about" onclick="closeDrawer()">About</a>
   <a href="#services" onclick="closeDrawer()">Services</a>
   <a href="#cases" onclick="closeDrawer()">Results</a>
@@ -365,7 +366,7 @@ html,body{max-width:100%;overflow-x:hidden}
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="https://web.whatsapp.com/send?phone=923077551304" target="_top" class="nav-cta js-whatsapp">Book Free Audit</a></li>
   </ul>
-  <button class="ham" id="ham" aria-label="Menu">
+  <button class="ham" id="ham" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -516,12 +517,12 @@ html,body{max-width:100%;overflow-x:hidden}
     <p class="cases-sub reveal d2">Every case represents a real engagement with measurable outcomes in local search.</p>
   </div>
 
-  <div class="case-row reveal" onclick="toggleCase(this)">
+  <div class="case-row reveal" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Medical Clinic, Lahore" onclick="toggleCase(this)">
     <div class="case-n">01</div>
     <div><div class="case-client">Medical Clinic, Lahore</div><div class="case-loc">📍 Gulberg, Lahore · PK</div></div>
     <div class="tags"><span class="tag">GMB Optimization</span><span class="tag">Citation Building</span><span class="tag">Local SEO</span></div>
     <div><div class="case-result-num">+312%</div><div class="case-result-lbl">Profile Views</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Unclaimed GMB profile with zero reviews. Competitors dominated Maps for "skin specialist Lahore" despite lower quality services.</p></div>
       <div class="db"><strong>Strategy</strong><p>Claimed and fully optimized GMB, built 12 Lahore-specific citations, launched a review generation campaign, and created localized landing pages.</p></div>
@@ -529,12 +530,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d1" onclick="toggleCase(this)">
+  <div class="case-row reveal d1" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Restaurant Chain, DHA Phase 5, Lahore" onclick="toggleCase(this)">
     <div class="case-n">02</div>
     <div><div class="case-client">Restaurant Chain</div><div class="case-loc">📍 DHA Phase 5, Lahore · PK</div></div>
     <div class="tags"><span class="tag">Google Maps SEO</span><span class="tag">Review Management</span><span class="tag">On-Page SEO</span></div>
     <div><div class="case-result-num">#1</div><div class="case-result-lbl">Google Maps Rank</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>3 branches ranking page 3 for "restaurants near me" in DHA. Poor review management and duplicate GMB listings hurting visibility.</p></div>
       <div class="db"><strong>Strategy</strong><p>Consolidated duplicate listings, built a review response system, optimized each branch GMB with unique photos, menus, and geo-targeted posts.</p></div>
@@ -542,12 +543,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d2" onclick="toggleCase(this)">
+  <div class="case-row reveal d2" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Plumbing Services, Houston" onclick="toggleCase(this)">
     <div class="case-n">03</div>
     <div><div class="case-client">Plumbing Services</div><div class="case-loc">📍 Houston, Texas · USA</div></div>
     <div class="tags"><span class="tag">Local SEO USA</span><span class="tag">Technical SEO</span><span class="tag">Keyword Research</span></div>
     <div><div class="case-result-num">+420%</div><div class="case-result-lbl">Organic Leads</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Family-owned plumbing business getting no calls from Google. Site had 8.2s load time, no schema, and poor mobile UX.</p></div>
       <div class="db"><strong>Strategy</strong><p>Full technical audit: reduced LCP to 1.9s, implemented LocalBusiness schema, created 12 hyper-local service pages targeting Houston suburbs.</p></div>
@@ -555,12 +556,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d1" onclick="toggleCase(this)">
+  <div class="case-row reveal d1" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Real Estate Agency, Birmingham" onclick="toggleCase(this)">
     <div class="case-n">04</div>
     <div><div class="case-client">Real Estate Agency</div><div class="case-loc">📍 Birmingham · UK</div></div>
     <div class="tags"><span class="tag">GMB Audit</span><span class="tag">Local SEO UK</span><span class="tag">Content SEO</span></div>
     <div><div class="case-result-num">+290%</div><div class="case-result-lbl">Enquiries</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Invisible on Google Maps in Birmingham. Suspended listing, NAP inconsistencies and zero local content were the main problems.</p></div>
       <div class="db"><strong>Strategy</strong><p>Resolved GMB suspension, fixed NAP across 30+ UK directories, created neighbourhood landing pages and a local blog strategy.</p></div>
@@ -568,12 +569,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d2" onclick="toggleCase(this)">
+  <div class="case-row reveal d2" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Dental Practice, Dubai Marina" onclick="toggleCase(this)">
     <div class="case-n">05</div>
     <div><div class="case-client">Dental Practice</div><div class="case-loc">📍 Dubai Marina · UAE</div></div>
     <div class="tags"><span class="tag">GMB Optimization</span><span class="tag">Reviews</span><span class="tag">Local SEO UAE</span></div>
     <div><div class="case-result-num">3-Pack</div><div class="case-result-lbl">Google Maps</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Low review count (12 reviews, 3.8★) and an incomplete profile made it hard to compete against large dental chains on Maps.</p></div>
       <div class="db"><strong>Strategy</strong><p>Revamped GMB, launched patient review outreach, targeted multilingual keywords (English + Arabic) for the Dubai market.</p></div>
@@ -581,12 +582,12 @@ html,body{max-width:100%;overflow-x:hidden}
     </div></div>
   </div>
 
-  <div class="case-row reveal d3" onclick="toggleCase(this)">
+  <div class="case-row reveal d3" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle details for Law Firm, Model Town, Lahore" onclick="toggleCase(this)">
     <div class="case-n">06</div>
     <div><div class="case-client">Law Firm</div><div class="case-loc">📍 Model Town, Lahore · PK</div></div>
     <div class="tags"><span class="tag">On-Page SEO</span><span class="tag">Local Keywords</span><span class="tag">Website SEO</span></div>
     <div><div class="case-result-num">+550%</div><div class="case-result-lbl">Organic Traffic</div></div>
-    <button class="case-btn">+</button>
+    <span class="case-btn" aria-hidden="true">+</span>
     <div class="case-details"><div class="case-dg">
       <div class="db"><strong>Challenge</strong><p>Beautiful website but zero Google visibility. No keyword strategy, thin content, no local schema, missing GMB — relied entirely on referrals.</p></div>
       <div class="db"><strong>Strategy</strong><p>Built a keyword map of 40+ local legal terms, rewrote all service pages, added Attorney schema, set up and optimized GMB, created a legal blog.</p></div>
@@ -708,16 +709,19 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60)
 const ham=document.getElementById('ham'),drawer=document.getElementById('drawer');
 ham.addEventListener('click',()=>{
   const open=ham.classList.toggle('open');
+  ham.setAttribute('aria-expanded',open?'true':'false');
   drawer.classList.toggle('open',open);
   document.body.style.overflow=open?'hidden':'';
 });
 function closeDrawer(){
   ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');
   drawer.classList.remove('open');
   document.body.style.overflow='';
 }
-/* Close drawer on outside tap */
+/* Close drawer on outside tap or Escape key */
 drawer.addEventListener('click',e=>{if(e.target===drawer)closeDrawer()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer()});
 
 /* REVEAL */
 const ro=new IntersectionObserver(entries=>entries.forEach(e=>{
@@ -743,11 +747,21 @@ function toggleCase(item){
   const isOpen=d.classList.contains('open');
   document.querySelectorAll('.case-details.open').forEach(x=>{
     x.classList.remove('open');
-    const btn=x.closest('.case-row').querySelector('.case-btn');
+    const parentRow=x.closest('.case-row');
+    if(parentRow)parentRow.setAttribute('aria-expanded','false');
+    const btn=parentRow?.querySelector('.case-btn');
     if(btn)btn.textContent='+';
   });
-  if(!isOpen){d.classList.add('open');if(b)b.textContent='−';}
+  if(!isOpen){d.classList.add('open');item.setAttribute('aria-expanded','true');if(b)b.textContent='−';}
 }
+document.querySelectorAll('.case-row').forEach(row=>{
+  row.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      toggleCase(row);
+    }
+  });
+});
 
 /* PARALLAX — desktop only, passive listener */
 if(window.matchMedia('(min-width:769px)').matches){
