@@ -1,0 +1,3 @@
+## 2025-05-20 - Custom Accordion Accessibility and Focus Management
+**Learning:** Clickable container elements (like custom accordion `.case-row` divs) often lack keyboard accessibility (`tabindex`, `role="button"`, `aria-expanded`, keydown handlers for Enter/Space) and create invalid nested interactive controls if they contain child `<button>` elements.
+**Action:** When converting static or div-based interactive containers into accessible controls, add `role="button"`, `tabindex="0"`, `aria-expanded`, and `aria-label`, convert nested `<button>` tags into `aria-hidden="true"` presentation spans, and ensure `:focus-visible` styles stand out clearly.
