@@ -1,0 +1,3 @@
+## 2026-09-03 - Off-Screen Mobile Navigation Drawers & Focus Management
+**Learning:** Off-screen navigation drawers positioned via CSS transforms (`transform: translateX(100%)`) remain in the tab order unless explicitly hidden with `visibility: hidden` (or `display: none`). Without `visibility: hidden`, screen readers and keyboard users tabbing through the site will focus on invisible off-screen links.
+**Action:** Always combine `transform` transitions with `visibility: hidden` (closed) and `visibility: visible` (open) for off-screen drawers, update `aria-expanded` dynamically on the toggle button, and add an `Escape` key listener that closes the drawer and restores focus to the toggle control.
