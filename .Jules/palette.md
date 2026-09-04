@@ -1,0 +1,3 @@
+## 2025-05-18 - Accordion Container Accessibility & Focus Indicators
+**Learning:** Interactive containers (like case study rows acting as accordions) built with `div` tags lack built-in accessibility features, preventing keyboard navigation and screen reader announcements. Additionally, having nested `<button>` elements inside clickable container rows creates invalid nested interactive controls.
+**Action:** Always make clickable container elements accessible by adding `role="button"`, `tabindex="0"`, `aria-expanded`, and descriptive `aria-label` attributes along with `Enter`/`Space` key handlers. Convert nested `<button>` tags into decorative `<span aria-hidden="true">` elements, and define explicit `:focus-visible` CSS rules for clear focus outlines.
