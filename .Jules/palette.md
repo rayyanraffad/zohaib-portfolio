@@ -1,0 +1,3 @@
+## 2025-05-20 - [Accordion Container Keyboard & Accessibility Pattern]
+**Learning:** Having nested `<button>` elements inside clickable container rows (such as accordion `.case-row` items) leads to invalid HTML (nested interactive controls) and inconsistent screen reader announcements.
+**Action:** Convert the outer row into a single focusable control with `role="button"`, `tabindex="0"`, `aria-expanded`, and `aria-label`, while changing inner decorative triggers into non-interactive `<span>` elements with `aria-hidden="true"`. Handle keydown for 'Enter' and 'Space' and apply `:focus-visible` outline styles.
