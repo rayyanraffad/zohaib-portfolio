@@ -1,3 +1,0 @@
-## 2026-09-09 - Accessible Accordion Cards & Mobile Nav Drawers
-**Learning:** Raw HTML landing pages with custom JS accordion rows (`div.case-row`) often lack keyboard accessibility, focus rings, and valid element nesting (e.g. `<button>` inside clickable `<div>`). Slide-out mobile drawers (`transform: translateX(100%)`) retain focusable links in tab order when closed unless hidden with `visibility: hidden`.
-**Action:** Always add `role="button"`, `tabindex="0"`, `aria-expanded`, and `keydown` listeners (Enter/Space) to custom interactive containers while replacing inner `<button>` elements with `aria-hidden="true"` spans. For mobile nav drawers, combine `transform` with `visibility: hidden` when closed to ensure proper focus management.
