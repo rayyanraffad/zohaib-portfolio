@@ -1,0 +1,3 @@
+## 2025-05-18 - Accordion Rows & Nested Interactive Control Avoidance
+**Learning:** Custom interactive rows (like `.case-row`) styled as cards or accordion headers need explicit `role="button"`, `tabindex="0"`, `aria-expanded`, and `aria-controls` along with `Enter` and `Space` key event handlers for screen readers and keyboard users. Any nested visual indicator button within the clickable container must have `tabindex="-1"` and `aria-hidden="true"` to prevent nested interactive control accessibility failures.
+**Action:** Always complement click handlers on non-button containers with full ARIA semantics and keyboard listeners, while suppressing nested inner buttons from the tab focus tree.
