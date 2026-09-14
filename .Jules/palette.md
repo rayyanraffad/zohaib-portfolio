@@ -1,0 +1,4 @@
+## 2025-05-18 - Accessible Accordion Containers and Offscreen Drawer Visibility
+
+**Learning:** Interactive accordion containers (`div` controls) require `role="button"`, `tabindex="0"`, `aria-expanded`, and keyboard listeners for Enter and Space keys. Converting nested `<button>` toggles into `span` elements with `aria-hidden="true"` prevents WCAG 'nested interactive controls' violations. Ignoring click events inside expanded content containers (`e.target.closest('.case-details')`) prevents accidental accordion collapse when users select or interact with text. For offscreen mobile drawers, using `visibility: hidden`/`visible` alongside `transform` transitions ensures closed drawer links are properly removed from keyboard tab order.
+**Action:** When making custom interactive containers or drawers accessible, apply `aria-hidden` to nested visual toggles, check target elements in click handlers before collapsing, and combine `visibility` with CSS slide transitions.
