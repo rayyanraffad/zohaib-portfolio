@@ -1,0 +1,3 @@
+## 2025-05-18 - Accordion Containers and Nested Interactive Controls
+**Learning:** When turning a layout container (like `.case-row`) into an expandable accordion, inner buttons cause nested interactive control accessibility failures. Furthermore, click listeners on the outer container can unintentionally close the details when users select or interact with text inside the expanded content.
+**Action:** Replace nested `<button>` elements with aria-hidden indicators (e.g. `<span aria-hidden="true">`) and ensure click listeners check `e.target.closest('.case-details')` before toggling. Always add `role="button"`, `tabindex="0"`, `aria-expanded`, and `:focus-visible` styles to custom clickable containers.
