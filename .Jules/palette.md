@@ -1,0 +1,3 @@
+## 2025-05-18 - Mobile Navigation Drawer Accessibility & Tab Order
+**Learning:** Off-screen sliding drawers that use `transform: translateX(100%)` remain in the DOM tab order and screen reader reading flow when closed if not hidden. Combining `visibility: hidden` (closed) and `visibility: visible` (open) with CSS transitions smoothly prevents keyboard tab navigation into hidden links without breaking slide transitions.
+**Action:** Always add `visibility: hidden` and `aria-hidden="true"` to slide-out drawers when closed, and dynamically update `aria-expanded`, `aria-label`, and `aria-hidden` attributes during drawer state changes.
