@@ -1,0 +1,4 @@
+## 2025-05-18 - Accordion Row Keyboard Navigation & Nested Controls
+
+**Learning:** When turning container `<div>` elements into accessible accordion buttons, nested `<button>` tags create nested interactive control failures for screen readers. Replacing them with decorative `<span aria-hidden="true">` elements and adding `role="button"`, `tabindex="0"`, `aria-expanded`, and keyboard listeners (`Enter`/`Space`) makes the element fully accessible without invalid HTML structure. Furthermore, guarding event handlers against clicks inside expanded content (`.case-details`) prevents accidental collapse when users attempt to select text.
+**Action:** Always replace inner `<button>` tags with decorative `<span>`s when making container rows interactive, apply `:focus-visible` outline using design tokens (`var(--gold)`), and ignore click/keydown events originating inside expanded content containers.
