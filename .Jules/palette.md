@@ -1,0 +1,3 @@
+## 2026-09-24 - Accessible Accordions in Raw HTML Templates
+**Learning:** Raw HTML accordion containers implemented using `div` elements require `role="button"`, `tabindex="0"`, dynamic `aria-expanded`, and keyboard event listeners (Enter/Space) to be navigable by screen readers and keyboard users. Inner interactive controls (like `<button>`) inside clickable row containers cause nested interactive element accessibility failures and should be converted to non-interactive elements with `aria-hidden="true"`.
+**Action:** When enhancing custom accordion components, replace nested interactive buttons with decorative icons, add keyboard listeners, and prevent toggling when users click inside the expanded details panel.
