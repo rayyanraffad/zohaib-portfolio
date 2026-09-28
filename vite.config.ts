@@ -14,5 +14,10 @@ export default defineConfig({
   },
   nitro: {
     preset: "cloudflare-module",
+    output: {
+      dir: "dist",
+      serverDir: "dist/server",
+      publicDir: "dist/client",
+    },
   },
 });
