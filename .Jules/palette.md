@@ -1,0 +1,3 @@
+## 2026-09-29 - Accessible Custom Accordion Controls
+**Learning:** Interactive containers like `.case-row` converted into accordion triggers require `role="button"`, `tabindex="0"`, `aria-expanded`, and keyboard event handlers (`Enter`/`Space`). Any nested `<button>` inside must be converted to non-interactive elements (`<span aria-hidden="true">`) to prevent nested interactive control A11y violations, and event handlers inside detail views must ignore clicks within expanded content to allow text selection without accidentally collapsing the drawer.
+**Action:** Always convert nested interactive controls in custom accordion rows to `aria-hidden="true"` spans and support `Enter`/`Space` key toggles with content-click isolation.
