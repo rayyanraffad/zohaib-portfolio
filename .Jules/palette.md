@@ -1,3 +1,4 @@
 ## 2026-10-04 - Accessible Accordion Row Pattern
+
 **Learning:** In raw HTML templates with custom accordion rows (`.case-row`), turning container `div`s into interactive components requires adding `role="button"`, `tabindex="0"`, `aria-expanded`, and keyboard handlers (`Enter`/`Space`). Nested `<button>` tags inside such interactive rows cause screen reader invalid nested control issues and should be converted to non-interactive `<span>` elements with `aria-hidden="true"`. Furthermore, click handlers on expandable rows must ignore events originating inside `.case-details` to avoid collapsing the accordion when users highlight or copy text.
 **Action:** Always replace nested buttons in interactive rows with `aria-hidden` spans, add explicit keyboard listeners and focus indicators (`:focus-visible`), and check event targets to ignore interactions within expanded details.
