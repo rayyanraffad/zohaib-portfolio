@@ -1,0 +1,5 @@
+## 2025-05-18 - Accordion and Drawer Keyboard/ARIA Accessibility
+
+**Learning:** Custom interactive containers like `.case-row` and off-screen navigation drawers require explicit ARIA attributes (`role="button"`, `tabindex="0"`, `aria-expanded`, `aria-hidden`) and visibility transitions (`visibility: hidden` -> `visible`). Without `visibility: hidden` when drawer is closed or `tabindex="0"`/keyboard listeners on interactive containers, keyboard and screen reader users cannot navigate or operate the elements, or focus can be trapped in off-screen drawer items. Furthermore, event bubbling on container clicks must ignore target events originating within expanded detail areas (`e.target.closest('.case-details')`) to allow users to copy/select text without closing the accordion.
+
+**Action:** Always complement container click handlers with keyboard listeners (Enter/Space), proper ARIA expanded states, non-interactive visual indicators (e.g. `span` instead of nested `button`), text selection safeguards, and CSS `visibility` transitions for offscreen drawers.
