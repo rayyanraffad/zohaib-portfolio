@@ -78,37 +78,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "SZA" },
-      {
-        name: "description",
-        content:
-          "Your Code, Our Site transforms your code into a functional website, adapting layouts for various devices. It integrates images seamlessly and maintains their vi",
-      },
+      { name: "description", content: "Your Code, Our Site transforms your code into a functional website, adapting layouts for various devices. It integrates images seamlessly and maintains their vi" },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "SZA" },
-      {
-        property: "og:description",
-        content:
-          "Your Code, Our Site transforms your code into a functional website, adapting layouts for various devices. It integrates images seamlessly and maintains their vi",
-      },
+      { property: "og:description", content: "Your Code, Our Site transforms your code into a functional website, adapting layouts for various devices. It integrates images seamlessly and maintains their vi" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "SZA" },
-      {
-        name: "twitter:description",
-        content:
-          "Your Code, Our Site transforms your code into a functional website, adapting layouts for various devices. It integrates images seamlessly and maintains their vi",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/158a4678-494d-4671-b10d-26fd77fd4fed/id-preview-495f99d0--7a969d2a-49b5-48da-8931-917212887f3e.lovable.app-1780125053588.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/158a4678-494d-4671-b10d-26fd77fd4fed/id-preview-495f99d0--7a969d2a-49b5-48da-8931-917212887f3e.lovable.app-1780125053588.png",
-      },
+      { name: "twitter:description", content: "Your Code, Our Site transforms your code into a functional website, adapting layouts for various devices. It integrates images seamlessly and maintains their vi" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/158a4678-494d-4671-b10d-26fd77fd4fed/id-preview-495f99d0--7a969d2a-49b5-48da-8931-917212887f3e.lovable.app-1780125053588.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/158a4678-494d-4671-b10d-26fd77fd4fed/id-preview-495f99d0--7a969d2a-49b5-48da-8931-917212887f3e.lovable.app-1780125053588.png" },
     ],
     links: [
       {
