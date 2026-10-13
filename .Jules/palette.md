@@ -1,0 +1,3 @@
+## 2025-05-20 - Custom Accordion Row Keyboard & Screen Reader Accessibility
+**Learning:** Raw HTML custom accordion rows implemented with `onclick` on `div`s lack keyboard focus, key press activation (`Enter`/`Space`), dynamic `aria-expanded` attributes, and screen reader labels. Furthermore, placing `<button>` elements inside clickable rows leads to invalid nested interactive controls.
+**Action:** Add `role="button"`, `tabindex="0"`, `aria-expanded="false"`, and descriptive `aria-label` to row containers, replace nested `<button>` tags with non-interactive `span`s marked `aria-hidden="true"`, provide `:focus-visible` styles, handle keyboard events, and ensure click events inside expanded details are ignored so text selection doesn't collapse the accordion.
