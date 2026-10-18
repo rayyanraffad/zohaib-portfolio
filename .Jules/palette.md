@@ -1,0 +1,3 @@
+## 2025-02-18 - Keyboard Focus & Accordion Accessibility in Raw HTML
+**Learning:** Custom interactive containers (`.case-row`) using `onclick` lack default keyboard accessibility and ARIA states. Converting inner `<button>` to non-interactive `<span aria-hidden="true">` avoids nested interactive control failures, while adding `role="button"`, `tabindex="0"`, `aria-expanded`, and `:focus-visible` styles ensures screen reader compatibility and keyboard navigation clarity.
+**Action:** Always pair custom clickable `div` containers with `role="button"`, `tabindex="0"`, keydown handlers (`Enter`/`Space`), and `:focus-visible` outlines matching theme tokens.
