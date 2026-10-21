@@ -1,0 +1,3 @@
+## 2026-10-21 - Accessible Mobile Navigation Drawer Pattern
+**Learning:** Off-screen CSS drawer transformations (`transform: translateX(100%)`) keep hidden navigation links in the standard tabbing order unless paired with `visibility: hidden`. Additionally, screen readers need dynamic `aria-expanded`, `aria-label`, and `aria-hidden` attributes alongside `Escape` key handling to navigate mobile menus predictably.
+**Action:** Always combine `visibility: hidden` (closed) and `visibility: visible` (open) with transition rules on mobile navigation drawers, manage `aria-expanded`/`aria-hidden`/`aria-label` dynamically in JS, and attach an `Escape` key listener that closes the drawer and restores focus to the hamburger button.
